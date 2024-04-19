@@ -1,0 +1,26 @@
+﻿
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment WebHostEnvironment
+@{ 
+    var blogPostService = new FinanceKnowHow.Services.BlogPostService(WebHostEnvironment, "EconomicsBlog.json");
+}
+
+@foreach (var recentPosts in blogPostService.GetBlogPosts().Take(3))
+{
+    <div class="archive-load" id="archive-load">
+        <div class="archive-load-thumbnail">
+            <a aria-current="page" asp-area="" asp-page="/Blog/BlogPost" asp-route-pageName="@recentPosts.PageName">
+                <img alt="@recentPosts.ImageAlt" src="@recentPosts.ImageUrl"
+                     class="wp-post-image">
+            </a>
+        </div>
+        <div class="archive-load-body">
+            <h4 class="archive-load-title">
+                <a aria-current="page" asp-area="" asp-page="/Blog/BlogPost" asp-route-pageName="@recentPosts.PageName">
+                    @recentPosts.Content
+                </a>
+            </h4>
+            <div class="archive-load-time">@recentPosts.PublishedDate.ToString("MMM d, yyyy")</div>
+        </div>
+    </div>
+}
+

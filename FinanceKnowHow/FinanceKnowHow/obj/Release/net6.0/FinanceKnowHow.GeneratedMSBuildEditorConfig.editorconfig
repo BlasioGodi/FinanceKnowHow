@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FinanceKnowHow
+build_property.RootNamespace = FinanceKnowHow
+build_property.ProjectDir = D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Archive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJjaGl2ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/BlogPost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xCbG9nUG9zdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/BusinessList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xCdXNpbmVzc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/EconomicsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xFY29ub21pY3NMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/InvestmentsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xJbnZlc3RtZW50c0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/PersonalList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xQZXJzb25hbExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/TradingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xUcmFkaW5nTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Blog/_economics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxvZ1xfZWNvbm9taWNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_additionalBlogs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hZGRpdGlvbmFsQmxvZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_archiveLoadEconomics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hcmNoaXZlTG9hZEVjb25vbWljcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_archiveLoadFinance - Copy (3).cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hcmNoaXZlTG9hZEZpbmFuY2UgLSBDb3B5ICgzKS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_archiveLoadFinance - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hcmNoaXZlTG9hZEZpbmFuY2UgLSBDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_archiveLoadFinance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hcmNoaXZlTG9hZEZpbmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_archiveLoadInvestments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hcmNoaXZlTG9hZEludmVzdG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_errorPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9lcnJvclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-q6g2y6mhao

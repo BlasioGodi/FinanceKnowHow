@@ -1,0 +1,108 @@
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment WebHostEnvironment
+@{
+    ViewData["Context"] = "@context";
+    ViewData["Type"] = "@type";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script defer></script>
+    <script></script>
+
+    <!--Schema-->
+    <script type="application/ld+json">
+{
+    "@ViewData["Context"]": "http://schema.org",
+    "@ViewData["Type"]": "LocalBusiness",
+    "name": "Finance Knowhow",
+    "image": "https://finance-knowhow.com/lib/src/swiper-landing/TR-01.jpg",
+    "url":"https://finance-knowhow.com/",
+    "telephone": "+254 (714) 585 382",
+    "email": "info@finance-knowhow.com",
+    "address": {
+      "@ViewData["Type"]": "PostalAddress",
+      "streetAddress": "Westlands",
+      "addressRegion": "Nairobi",
+      "addressCountry": "Kenya"
+    }
+  }</script>
+
+    <!-- Title -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="<directive><value>;<directive><value>" />
+    <meta http-equiv="cache-control" content="max-age=31536000, public" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FinanceKnowHow | @ViewData["Title"]</title>
+    <link rel="canonical" href="https://finance-knowhow.com/">
+
+    <!--MetaData-->
+    <meta property="og:url" content="https://finance-knowhow.com/">
+    <meta property="og:site_name" content="Finance Knowhow">
+    <meta name="theme-color" content="">
+    <meta name="author" content="Finance Knowhow">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="Website">
+
+    @RenderSection("MetaTags", required: false)
+
+    <!-- Favicons - To be adjusted -->
+    <link rel="shortcut icon" sizes="32x32" href="~/lib/logo/FKH-32x32.png" />
+    <link rel="apple-touch-icon" sizes="32x32" href="~/lib/logo/FKH-32x32.png" />
+    <link rel="apple-touch icon" sizes="76x76" href="~/lib/logo/FKH-76x76.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="~/lib/logo/FKH-120x120.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/lib/logo/FKH-180x180.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="~/lib/logo/FKH-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/lib/logo/FKH-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="~/lib/logo/FKH-512x512.png">
+
+    <!--Main Styles-->
+    <link href="~/css/bootstrap_custom.css" rel="stylesheet" />
+    <link href="~/css/icon/et-line-font.css" rel="stylesheet" />
+    <link href="~/css/icon/iconfun.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <!--Font Styles-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- Owl Carousel Stylesheet -->
+    <link href="~/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <!-- Animation Stylesheet -->
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <!--Swiper Stylesheet-->
+    <link href="~/node_modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!--Image Gallery Stylesheet-->
+    <link href="~/css/image-carousel.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
+</head>
+<body>
+
+    @await Html.PartialAsync("_Header", new FinanceKnowHow.Controllers._HeaderModel(new Services.BlogPostService(WebHostEnvironment)))
+    <div class="layout">
+        <main role="main" class="pb-4">
+            @RenderBody()
+        </main>
+    </div>
+    <!-- Overlay for faded background -->
+    <div id="overlay"></div>
+    @await Html.PartialAsync("_Footer", new FinanceKnowHow.Controllers._FooterModel(new Services.BlogPostService(WebHostEnvironment)))
+
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/node_modules/jquery/dist/jquery.sticky.js"></script>
+    <script src="~/js/jquery.appear.js"></script>
+
+    <!--Owl Carousel JS-->
+    <script src="~/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

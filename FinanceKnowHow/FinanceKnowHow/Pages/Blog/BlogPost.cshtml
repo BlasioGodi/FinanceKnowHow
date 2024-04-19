@@ -1,0 +1,193 @@
+﻿@page "{pageName}"
+@model FinanceKnowHow.Controllers.BlogPostModel
+@{
+    var requestedLink = HttpContext.Request.Path;
+    var pageName = requestedLink.Value.Trim('/');
+    ViewData["Title"] = Model.BlogPostPage.PageName;
+    ViewData["TwitterShare"] = "https://twitter.com/intent/tweet?text=We%20are%20Hessal%20Solutions,%20LPG%20Specialists%20and%20Installers%20Get%20to%20know%20more%20about%20us.%20Visit%20our%20site%20@%20.%20https://hessal-sol.com/";
+    ViewData["WhatsappShare"] = "whatsapp://send?text=We%20are%20Hessal%20Solutions,%20LPG%20Specialists%20and%20Installers%20Get%20to%20know%20more%20about%20us.%20Visit%20our%20site%20@%20.%20https://hessal-sol.com/ ";
+}
+
+@section MetaTags {
+    <meta name="description" content="@Model.BlogPostPage.MetaDescription">
+    <meta property="og:title" content="@Model.BlogPostPage.MetaOgTitle">
+    <meta property="og:description" content="@Model.BlogPostPage.MetaOgDescription">
+    <meta name="keywords" content="@Model.BlogPostPage.MetaKeyWords">
+    <meta property="og:image" content="https://hessal-sol.com/lib/src/bg/Fire-03.webp">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+}
+
+<section>
+    <div id="post-header" class="bg-primary">
+        <div class="post single">
+            <div class="image-layer-overlay"></div>
+            <div class="post-image">
+                <h1 class="post-category">@Model.BlogPostPage.Category</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="post-content" class="section-knowledge">
+    <div class="container">
+        <div class="row">
+            <!--Render Region-->
+            <div id="content" class="post single col-md-8 ">
+                <!-- Post / Image -->
+                <div class="post-holder">
+                    <div class="img-holder">
+                        <img src="@Model.BlogPostPage.ImageUrl" alt="@Model.BlogPostPage.ImageAlt">
+                    </div>
+                </div>
+                <!-- Post / Item -->
+                <article class="post-content ">
+                    <ul class="post-meta">
+                        <li>by @Model.BlogPostPage.Author</li>
+                        <li>@Model.BlogPostPage.PublishedDate.ToString("MMMM d, yyyy hh:mm:tt")</li>
+                    </ul>
+                    <h1 class="blog-header my-4 border-bottom pb-2">
+                        @Model.BlogPostPage.Highlight
+                    </h1>
+                    <p class="lead-text">
+                        @Model.BlogPostPage.Summary
+                    </p>
+                    <!--Post Content-->
+                    @{
+                        switch (pageName)
+                        {
+                            case "Blog/BlogPost/Economic Recession":
+                                @Html.Partial("_economics")
+                                break;
+                            case "Blog/BlogPost/LPG Production":
+                                @Html.Partial("_production")
+                                break;
+                            case "Blog/BlogPost/LPG Safety":
+                                @Html.Partial("_safety")
+                                break;
+                            case "Blog/BlogPost/Leak Detection":
+                                @Html.Partial("_leakages")
+                                break;
+                            case "Blog/BlogPost/Fire Prevention":
+                                @Html.Partial("_fireprevention")
+                                break;
+                            case "Blog/BlogPost/Gas Pipes":
+                                @Html.Partial("_plastic")
+                                break;
+                            case "Blog/BlogPost/Gas Accessories":
+                                @Html.Partial("_accessories")
+                                break;
+                            case "Blog/BlogPost/Non-destructive Testing":
+                                @Html.Partial("_ndtesting")
+                                break;
+                            case "Blog/BlogPost/Tank Earthing":
+                                @Html.Partial("_earthing")
+                                break;
+                            default:
+                                <p>Error: Blog post not found</p>
+                                break;
+                        }
+                    }
+                </article>
+            </div>
+            <aside id="side-bar" class="col-xs-12 col-md-4">
+                <div class="widget recent-posts-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <header class="widget-head">
+                        <h3>Popular Posts</h3>
+                    </header>
+                    <ol>
+                        @{
+                            int counter = 0;
+                            foreach (var post in Model.BlogPosts)
+                            {
+                                if (post.Id != Model.BlogPostPage.Id)
+                                {
+                                    <li>
+                                        <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                        <span class="post-tag">
+                                            <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
+                                            @if (counter % 2 == 0)
+                                            {
+                                                <strong class="tag hot">@post.Category</strong>
+                                            }
+                                            else
+                                            {
+                                                <strong class="tag">@post.Category</strong>
+                                            }
+                                        </span>
+                                    </li>
+                                    counter++;
+                                }
+                            }
+                        }
+                    </ol>
+                </div>
+
+                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                </div>
+                <div class="widget widget_categories tabs wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <header class="widget-head">
+                        <h3>Category</h3>
+                        <p>Browse your favorite categories</p>
+                    </header>
+                    <div class="lists-holder">
+                        <ul>
+                            <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                        </ul>
+                        <ul>
+                            <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
+                            <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
+                            <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section id="recent-posts" class="recent">
+    <div class="recent-container-box pt-5">
+        <h2>Related Posts</h2>
+        <div class="owl-four owl-carousel">
+            @foreach (var post in Model.BlogPosts)
+            {
+                if (post.Id != Model.BlogPostPage.Id)
+                {
+                    <div class="recent-img-box project">
+                        <img src="@post.ImageUrl" width="285" height="285" alt="@post.ImageAlt" class="img-fluid" />
+                        <div class="news-box text-center">
+                            <div class="news-box_title">@post.Title</div>
+                            <div class="text">
+                                <a asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Highlight</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <!-- Owl Carousel Files -->
+    <script src="~/lib/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.magnific-popup.js"></script>
+    <script src="~/js/owl-carousel-project.js"></script>
+    <script src="~/js/interface.js"></script>
+}
+
+
+

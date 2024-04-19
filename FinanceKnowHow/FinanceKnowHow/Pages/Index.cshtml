@@ -1,0 +1,351 @@
+﻿@page
+@model FinanceKnowHow.Controllers.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+@section MetaTags {
+    <meta name="description"
+          content="">
+    <meta property="og:title" content="Finance KnowHow">
+    <meta property="og:description"
+          content="We offer free and unsolicited financial information as it happens around the world. Learn with us!">
+    <meta name="keywords"
+          content="Finance, Investments, Personal Finance, Economics, Stocks, Forex Trading, CFD, Gold">
+    <meta property="og:image" content="https://finance-knowhow.com/lib/src/swiper-landing/TR-01.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+}
+
+<section id="main-slider" class="position-relative main-slider">
+    <div class="swiper swiper-landing">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-01.jpg)">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <div class="container">
+                    <div class="slider-inner">
+                        <h1>The Forex Market</h1>
+                        <a class="slider-link">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-02.jpg)">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <div class="container">
+                    <div class="slider-inner">
+                        <h1>Economics at a glance</h1>
+                        <a class="slider-link">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-03.jpg)">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <div class="container">
+                    <div class="slider-inner">
+                        <h1>Is a recession long overdue?</h1>
+                        <a class="slider-link">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-04.jpg)">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <div class="container">
+                    <div class="slider-inner">
+                        <h1>Finance 101</h1>
+                        <a class="slider-link">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-05.jpg)">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <div class="container">
+                    <div class="slider-inner">
+                        <h1>Maintaining a Budget</h1>
+                        <a class="slider-link">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-button-prev">
+                <span class="fa fa-arrow-right"></span>
+            </div>
+            <div class="slider-button-next">
+                <span class="fa fa-arrow-right"></span>
+            </div>
+        </div>
+        <div class="swiper-pagination-bullet-active-next"></div>
+    </div>
+</section>
+
+<section class="section-blog-main" id="blog-area-1">
+    <div class="container">
+        <div class="row">
+            <div id="main-content" class="col-xs-12 col-md-8">
+                <div class="cols-holder">
+                    <h1>Finance 101</h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
+                                <div class="text-wrap">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Finance 101</a></time>
+                                    <h2><a href="">Understanding your finances is the key to your freedom!</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
+                                <div class="text-wrap">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
+                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="cols-holder">
+                    <h1>Economics</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
+                                <div class="text-wrap text-center">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
+                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="cols-holder">
+                    <h1>Trading</h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
+                                <div class="text-wrap">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Finance 101</a></time>
+                                    <h2><a href="">Understanding your finances is the key to your freedom!</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
+                                <div class="text-wrap">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
+                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="cols-holder">
+                    <div class="swiper swiper-announcements mb-4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                    <div class="img-holder">
+                                        <a href="">
+                                            <div class="image-layer-overlay">
+                                                <div class="trading-box">
+                                                    <h2 class="trading-box_title">News Headline</h2>
+                                                    <p>
+                                                        The annual White House budget proposal is expected to draw from a stockpile of policy goals President Biden has held for
+                                                        years, including subsidized child care and in-home care for the elderly
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description" class="swipe">
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                    <div class="img-holder">
+                                        <a href="">
+                                            <div class="image-layer-overlay">
+                                                <div class="trading-box">
+                                                    <h2 class="trading-box_title">News Headline</h2>
+                                                    <p>
+                                                        The annual White House budget proposal is expected to draw from a stockpile of policy goals President Biden has held for
+                                                        years, including subsidized child care and in-home care for the elderly
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description" class="swipe">
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="slider-nav__trading">
+                                <div class="slider-button-prev_trading">
+                                    <span class="fa fa-arrow-right"></span>
+                                </div>
+                                <div class="slider-button-next_trading">
+                                    <span class="fa fa-arrow-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside id="side-bar" class="col-xs-12 col-md-4">
+                <div class="widget recent-posts-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <header class="widget-head">
+                        <h3>Popular Posts</h3>
+                    </header>
+                    <ol>
+                        @{
+                            int counter = 0;
+                            foreach (var post in Model.BlogPosts)
+                            {
+                                <li>
+                                    <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                    <span class="post-tag">
+                                        <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
+                                        @if (counter % 2 == 0)
+                                        {
+                                            <strong class="tag hot">@post.Category</strong>
+                                        }
+                                        else
+                                        {
+                                            <strong class="tag">@post.Category</strong>
+                                        }
+                                    </span>
+                                </li>
+                                counter++;
+                            }
+                        }
+                    </ol>
+                </div>
+                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                </div>
+                <div class="widget widget_categories tabs wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <header class="widget-head">
+                        <h3>Category</h3>
+                        <p>Browse your favorite categories</p>
+                    </header>
+                    <div class="lists-holder">
+                        <ul>
+                            <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                        </ul>
+                        <ul>
+                            <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
+                            <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
+                            <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+</section>
+<section id="recent-posts" class="recent">
+    <div class="recent-container-box clearfix">
+        <h2>Most Recent Posts</h2>
+        <div class="owl-four owl-carousel">
+            @foreach (var post in Model.BlogPosts)
+            {
+                <div class="recent-img-box project">
+                    <img src="@post.ImageUrl" width="285" height="285" alt="@post.ImageAlt" class="img-fluid" />
+                    <div class="news-box text-center">
+                        <div class="news-box_title">@post.Title</div>
+                        <div class="text">
+                            <a asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Highlight</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/node_modules/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper-landing", {
+            spaceBetween: 1200,
+            effect: "fade",
+            loop: true,
+            navigation: {
+                nextEl: ".slider-button-next",
+                prevEl: ".slider-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        var swiper2 = new Swiper(".swiper-announcements", {
+            spaceBetween: 1200,
+            effect: "fade",
+            loop: true,
+            navigation: {
+                nextEl: ".slider-button-next_trading",
+                prevEl: ".slider-button-prev_trading",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/node_modules/jquery/dist/jquery.stellar.min.js"></script>
+    <script src="~/node_modules/jquery/dist/jquery.magnific-popup.js"></script>
+    <script src="~/node_modules/isotope-layout/dist/isotope.pkgd.min.js"></script>
+    <script src="~/js/interface.js"></script>
+    <script src="~/js/owl-carousel-project.js"></script>
+}

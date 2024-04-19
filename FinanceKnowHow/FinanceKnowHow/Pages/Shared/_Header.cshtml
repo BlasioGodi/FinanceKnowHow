@@ -1,0 +1,402 @@
+﻿@model FinanceKnowHow.Controllers._HeaderModel
+@{
+    ViewData["Email"] = "info@finance-knowhow.com";
+    ViewData["Contact"] = "+254 (714) 585 382";
+    ViewData["Contact2"] = "+254 (721) 262 655";
+
+    Model.Economics = new List<string> { "Financial Concepts", "Idea 2", "Idea 3", "Idea 4", "Idea 5" };
+    Model.Trading = new List<string> { "Forex/Crypto", "Stocks", "Idea 3", "Idea 4", "Idea 5" };
+    Model.Investments = new List<string> { "Portfolio Management", "Bonds", "Treasury Bills", "AI Investing" };
+    Model.Business = new List<string> { "Entrepreneurship", "Case Studies", "Idea 3", "Idea 4", "Idea 5" };
+    Model.PersonalFinance = new List<string> { "Saving", "Budgeting", "Banking" };
+    Model.CurrentDateTime = DateTime.Now;
+
+    Model.SocialIcons = new List<string> { "fa-brands fa-facebook", "fa-brands fa-x-twitter", "fa-brands fa-instagram", "fa-brands fa-telegram" };
+    Model.SocialList = new List<string> { "social-list-facebook", "social-list-twitter", "social-list-instagram", "social-list-telegram" };
+}
+
+<header class="main-header">
+    <div class="main-header_top text-white">
+        <div class="container d-none d-lg-block">
+            <div class="inner clearfix row">
+                <div class="main-header_left col-md-4">
+                    <div class="list-unstyled address">
+                        <a class="text-end" asp-area="" asp-page="/Index">
+                            <!--Smaller Screens-->
+                            <img src="~/lib/logo/FKH-64x64.png" class="d-inline-block align-text-center mx-2 navbar-img d-sm-none" alt="FinanceKnowHow Logo" />
+                            <!--Larger Screens-->
+                            <img src="~/lib/logo/FKHL-40x121.png" class="d-inline-block align-text-center mx-2 navbar-img d-none d-sm-block" alt="FinanceKnowHow Logo" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <div class="text">
+                        <span href="#">@Model.CurrentDateTime.ToLongDateString()</span>
+                    </div>
+                </div>
+                <div class="main-header_right col-md-4 d-flex justify-content-end align-items-center">
+                    <div class="inner">
+                        <div class="main-header_socials">
+                            <a class="social-list-facebook" href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a class="social-list-twitter" href=""><i class="fa-brands fa-x-twitter"></i></a>
+                            <a class="social-list-instagram" href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a class="social-list-whatsapp" href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                        <div class="main-header_btn-box">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fa fa-envelope"></i>
+                                NewsLetter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container d-none d-lg-block">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+{
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100 Cash CFD"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "Dow Jones",
+      "proName": "BLACKBULL:US30"
+    },
+    {
+      "description": "Gold",
+      "proName": "OANDA:XAUUSD"
+    },
+    {
+      "description": "Google",
+      "proName": "NASDAQ:GOOGL"
+    },
+    {
+      "description": "Apple",
+      "proName": "NASDAQ:AAPL"
+    },
+    {
+      "description": "Tesla Inc.",
+      "proName": "NASDAQ:TSLA"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+}</script>
+    </div>
+    <!--TradingView Widget END-->
+
+    <div class="sticky-index">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-sticky">
+            <div class="container">
+                <button class="navbar-toggler button-menu-wrap" id="offcanvasButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasGypsey"
+                        aria-controls="offcanvasGypsey" aria-label="Toggle navigation">
+                    <div class="button-menu" id="menu">
+                        <div>
+                            <span class="line-top"></span>
+                            <span class="line-middle"></span>
+                            <span class="line-bottom"></span>
+                        </div>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-active" aria-current="page" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item navbar-collapse-menu">
+                            <a class="nav-link nav-link-active">Economics<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                @if (Model.Economics != null)
+                                {
+                                    @foreach (var economics in Model.Economics)
+                                    {
+                                        <li><a aria-current="page" asp-area="" asp-page="" asp-route-title="">@economics</a></li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="nav-item navbar-collapse-menu">
+                            <a class="nav-link nav-link-active">Investments<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                @if (Model.Investments != null)
+                                {
+                                    @foreach (var investment in Model.Investments)
+                                    {
+                                        <li><a aria-current="page" asp-area="" asp-page="" asp-route-title="">@investment</a></li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="nav-item navbar-collapse-menu">
+                            <a class="nav-link nav-link-active">Trading<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                @if (Model.Trading != null)
+                                {
+                                    @foreach (var trading in Model.Trading)
+                                    {
+                                        <li><a aria-current="page" asp-area="" asp-page="" asp-route-title="">@trading</a></li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="nav-item navbar-collapse-menu">
+                            <a class="nav-link nav-link-active">Business<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                @if (Model.Business != null)
+                                {
+                                    @foreach (var business in Model.Business)
+                                    {
+                                        <li><a aria-current="page" asp-area="" asp-page="" asp-route-title="">@business</a></li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="nav-item navbar-collapse-menu">
+                            <a class="nav-link nav-link-active">Personal Finance<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                @if (Model.PersonalFinance != null)
+                                {
+                                    @foreach (var personalFinance in Model.PersonalFinance)
+                                    {
+                                        <li><a aria-current="page" asp-area="" asp-page="" asp-route-title="">@personalFinance</a></li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-active" aria-current="page" asp-page="/Archive">Archives</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-active" aria-current="page" asp-page="">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary border-2 btn-outline-dark search-btn" type="submit">Search</button>
+                    </form>
+                </div>
+                <a class="brand-logo" aria-current="page" asp-area="" asp-page="/Index">
+                    <img src="~/lib/logo/FKHD-40x121.png" class="d-inline-block align-text-center mx-2 navbar-img d-lg-none" alt="FinanceKnowHow Logo" />
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="offcanvas offcanvas-start text-light bg-offcanvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasGypsey"
+         aria-labelledby="offcanvasGypseyLabel">
+        <div class="border-bottom border-custom-black">
+        </div>
+        <div class="offcanvas-body container d-flex flex-column justify-content-between">
+            <nav class="sideMenu-nav">
+                <form class="d-flex pb-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary border-2 btn-outline-dark search-btn" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile">
+                            Economics <span class="nav-link-mob-button" id="nav-link-btn-1" data-corresponding-angle="navlinkAngle1" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseEconomics" aria-expanded="false" aria-controls="collapseEconomics">
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-1"></i>
+                            </span>
+                        </a>
+                        <div class="collapse" id="collapseEconomics">
+                            <ul class="text-center text-light bg-offcanvas-collapse">
+                                @if (Model.Economics != null)
+                                {
+                                    @for (var i = 0; i < Model.Economics.Count; i++)
+                                    {
+                                        var economics = Model.Economics[i];
+
+                                        <li class="@(i == Model.Economics.Count - 1 ? "" : "border-bottom-collapse") mx-3 my-2">
+                                            <a target="_blank" rel="noopener noreferrer" class="nav-link"
+                                               aria-current="page" asp-area="" asp-page="" asp-route-title="@economics">@economics</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile">
+                            Investments <span class="nav-link-mob-button" id="nav-link-btn-2" data-corresponding-angle="navlinkAngle2" data-bs-toggle="collapse"
+                                              data-bs-target="#collapseInvestments" aria-expanded="false" aria-controls="collapseInvestments">
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-2"></i>
+                            </span>
+                        </a>
+                        <div class="collapse" id="collapseInvestments">
+                            <ul class="text-center text-light bg-offcanvas-collapse">
+                                @if (Model.Investments != null)
+                                {
+                                    @for (var i = 0; i < Model.Investments.Count; i++)
+                                    {
+                                        var investment = Model.Investments[i];
+
+                                        <li class="@(i == Model.Investments.Count - 1 ? "" : "border-bottom-collapse") mx-3 my-2">
+                                            <a target="_blank" rel="noopener noreferrer" class="nav-link"
+                                               aria-current="page" asp-area="" asp-page="" asp-route-title="@investment">@investment</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile">
+                            Trading <span class="nav-link-mob-button" id="nav-link-btn-3" data-corresponding-angle="navlinkAngle3" data-bs-toggle="collapse"
+                                          data-bs-target="#collapseTrading" aria-expanded="false" aria-controls="collapseTrading">
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-3"></i>
+                            </span>
+                        </a>
+                        <div class="collapse" id="collapseTrading">
+                            <ul class="text-center text-light bg-offcanvas-collapse">
+                                @if (Model.Trading != null)
+                                {
+                                    @for (var i = 0; i < Model.Trading.Count; i++)
+                                    {
+                                        var trading = Model.Trading[i];
+
+                                        <li class="@(i == Model.Trading.Count - 1 ? "" : "border-bottom-collapse") mx-3 my-2">
+                                            <a target="_blank" rel="noopener noreferrer" class="nav-link"
+                                               aria-current="page" asp-area="" asp-page="" asp-route-title="@trading">@trading</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile">
+                            Business <span class="nav-link-mob-button" id="nav-link-btn-4" data-corresponding-angle="navlinkAngle4" data-bs-toggle="collapse"
+                                           data-bs-target="#collapseBusiness" aria-expanded="false" aria-controls="collapseBusiness">
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-4"></i>
+                            </span>
+                        </a>
+                        <div class="collapse" id="collapseBusiness">
+                            <ul class="text-center text-light bg-offcanvas-collapse">
+                                @if (Model.Business != null)
+                                {
+                                    @for (var i = 0; i < Model.Business.Count; i++)
+                                    {
+                                        var business = Model.Business[i];
+
+                                        <li class="@(i == Model.Business.Count - 1 ? "" : "border-bottom-collapse") mx-3 my-2">
+                                            <a target="_blank" rel="noopener noreferrer" class="nav-link"
+                                               aria-current="page" asp-area="" asp-page="" asp-route-title="@business">@business</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile">
+                            Personal Finance <span class="nav-link-mob-button" id="nav-link-btn-5" data-corresponding-angle="navlinkAngle5" data-bs-toggle="collapse"
+                                                   data-bs-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal">
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-5"></i>
+                            </span>
+                        </a>
+                        <div class="collapse" id="collapsePersonal">
+                            <ul class="text-center text-light bg-offcanvas-collapse">
+                                @if (Model.PersonalFinance != null)
+                                {
+                                    @for (var i = 0; i < Model.PersonalFinance.Count; i++)
+                                    {
+                                        var personalFinance = Model.PersonalFinance[i];
+
+                                        <li class="@(i == Model.PersonalFinance.Count - 1 ? "" : "border-bottom-collapse") mx-3 my-2">
+                                            <a target="_blank" rel="noopener noreferrer" class="nav-link"
+                                               aria-current="page" asp-area="" asp-page="" asp-route-title="@personalFinance">@personalFinance</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Archive">Archives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Contact">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="row">
+                <div class="col-contact pt-md-3 pt-xs-5">
+                    <p class="text">Money matters to you and I, lets learn about finance!</p>
+                    <p class="text"><span><i class="fa fa-phone contact-icons phone"></i> @ViewData["Contact2"]</span></p>
+                    <p class="text"><span><i class="fa fa-whatsapp contact-icons whatsapp"></i> @ViewData["Contact"]</span></p>
+                    <p class="text"><span><i class="fa fa-envelope contact-icons email"></i> @ViewData["Email"]</span></p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div id="Follow" class="col-md-6 col-lg-6 col-sm-6 col-xs-12 text-lg-start text-center mb-2">
+                    <p class="mb-0 social-title text-s-center text-sm-start">
+                        Follow us on social media:
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 text-lg-end text-sm-end text-center mb-2">
+                    <ul class="social-list">
+                        @if (Model.SocialIcons != null)
+                        {
+                            @for (var i = 0; i < Model.SocialIcons.Count; i++)
+                            {
+                                var socialIconsCanvas = Model.SocialIcons[i];
+                                var socialListCanvas = Model.SocialList[i];
+                                <li>
+                                    <a target="_blank" rel="noopener noreferrer" class="@socialListCanvas"
+                                       href="#" aria-label="follow button">
+                                        <i class="@socialIconsCanvas"></i>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="row d-flex align-items-end">
+                <div class="col-md-6 mb-2 col-lg-6 col-sm-12 text-center">
+                    &copy
+                    <span><strong>finance-knowhow</strong></span>
+                    2024 - All Rights Reserved.
+                </div>
+                <div class="col-md-6 mb-2 col-lg-6 col-sm-12 text-center text-light">
+                    Designed by
+                    <strong>WebMania</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Header Icon Style-->
+    <style>
+        @Html.Raw(ViewData["Social-List-Dark"])
+    </style>
+</header>
+

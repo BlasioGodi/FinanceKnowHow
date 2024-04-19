@@ -1,0 +1,233 @@
+﻿@page
+@model FinanceKnowHow.Controllers.ArchiveModel
+@{
+    ViewData["Title"] = "Archive";
+    ViewData["TwitterShare"] = "https://twitter.com/intent/tweet?text=We%20are%20Hessal%20Solutions,%20LPG%20Specialists%20and%20Installers%20Get%20to%20know%20more%20about%20us.%20Visit%20our%20site%20@%20.%20https://hessal-sol.com/";
+    ViewData["WhatsappShare"] = "whatsapp://send?text=We%20are%20Hessal%20Solutions,%20LPG%20Specialists%20and%20Installers%20Get%20to%20know%20more%20about%20us.%20Visit%20our%20site%20@%20.%20https://hessal-sol.com/ ";
+}
+
+@section MetaTags {
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta name="keywords" content=" ">
+    <meta property="og:image" content="https://finance-knowhow.com/lib/src/swiper-landing/TR-03.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+}
+
+<section>
+    <div id="archive-header" class="bg-primary">
+        <div class="archive">
+            <div class="image-layer-overlay"></div>
+            <div class="archive-image">
+                <div class="container">
+                    <h1 class="archive-category">@ViewData["Title"]</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="post-content" class="section-knowledge">
+    <div class="container">
+        <div class="row">
+            <!--Blog Posts List-->
+            <div class="col-md-8">
+                <div class="cols-holder mt-5">
+                    <h1>Finance 101</h1>
+                    <div class="row">
+                        <div class="col-md-6 mb-xxs-4 mb-xs-4 mb-sm-4 mb-md-4">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
+                                <div class="text-wrap">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Finance 101</a></time>
+                                    <h2><a href="">Understanding your finances is the key to your freedom!</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="archive-load-widget" id="archive-widget-1">
+                                @Html.Partial("_archiveLoadFinance")
+                            </div>
+                            <div class="mt-3 text-center">
+                                <button id="fin-load-more" class="load-more">
+                                    Load More
+                                    <span class="loading"><span></span></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
+                                <div class="text-wrap">
+                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
+                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
+                                    <div class="d-inline-flex justify-content-between w-100">
+                                        <a href="" class="link-more">Read more</a>
+                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="archive-load-widget" id="archive-widget-2">
+                                @Html.Partial("_archiveLoadInvestments")
+                            </div>
+                            <div class="mt-3 text-center">
+                                <button id="invest-load-more" class="load-more">
+                                    Load More
+                                    <span class="loading"><span></span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside id="side-bar" class="col-xs-12 col-md-4 mt-5">
+                <div class="widget recent-posts-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <header class="widget-head">
+                        <h3>Popular Posts</h3>
+                    </header>
+                    <ol>
+                        @{
+                            int counter = 0;
+                            foreach (var post in Model.BlogPosts)
+                            {
+                                <li>
+                                    <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                    <span class="post-tag">
+                                        <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
+                                        @if (counter % 2 == 0)
+                                        {
+                                            <strong class="tag hot">@post.Category</strong>
+                                        }
+                                        else
+                                        {
+                                            <strong class="tag">@post.Category</strong>
+                                        }
+                                    </span>
+                                </li>
+                                counter++;
+                            }
+                        }
+                    </ol>
+                </div>
+
+                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                </div>
+                <div class="widget widget_categories tabs wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <header class="widget-head">
+                        <h3>Category</h3>
+                        <p>Browse your favorite categories</p>
+                    </header>
+                    <div class="lists-holder">
+                        <ul>
+                            <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                        </ul>
+                        <ul>
+                            <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
+                            <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
+                            <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
+                            <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        //Finance Blogs
+        var skipfin = @Model.FinancePosts.Count();
+        var finTotal = @Model.FinanceTotal.Count();
+        var finLoaded = 3;
+        var financeUrl = "FinanceBlog.json";
+
+        //Economics Blogs
+        var skipEcon = @Model.EconomicsPosts.Count();
+        var econTotal = @Model.EconomicsTotal.Count();
+        var econLoaded = 3;
+        var economicsUrl = "Economics.json";
+
+        //Trading Blogs
+        var skipTrad = @Model.TradingPosts.Count();
+        var tradTotal = @Model.TradingTotal.Count();
+        var tradLoaded = 3;
+        var tradingUrl = "TradingBlog.json";
+
+        //Personal Finance Blogs
+        var skipPersonal = @Model.PersonalPosts.Count();
+        var personalTotal = @Model.PersonalTotal.Count();
+        var personalLoaded = 3;
+        var personalUrl = "PersonalBlog.json";
+
+        //Investment Blogs
+        var skipInv = @Model.InvestmentPosts.Count();
+        var invTotal = @Model.InvestmentTotal.Count();
+        var invLoaded = 3;
+        var investmentUrl = "InvestmentsBlog.json";
+
+        $(document).ready(function () {
+            var take = 3;
+
+            const btnloadMore1 = document.getElementById('fin-load-more');
+            const btnloadMore2 = document.getElementById('invest-load-more');
+
+            function loadMoreData(buttonId, widgetId, dataUrl, skipData, blogServiceUrl) {
+                $('#' + buttonId).click(function () {
+                setTimeout(function () {
+                    $.get(dataUrl, { blogServiceUrl: blogServiceUrl, skip: skipData, take: take }, function (data) {
+                        $('#' + widgetId).append(data); // Append additional data to container
+                        skipData += take; // Increment skip value
+                    });
+
+                }, 3000)
+            });
+            }
+
+            function loadMore(buttonElement,dataUrl,skipData,loadedItems,totalItems) {
+                buttonElement.addEventListener('click', (e) => {
+                    $.get(dataUrl, { skip: skipData, take: take }, function (data) {
+                        loadedItems += data.length;
+
+                        console.log("Loaded Items", loadedItems);
+                        console.log("Total Items", totalItems);
+
+                        e.target.classList.add('show-loader');
+
+                        setTimeout(function () {
+                            // Hide the load more button if all items loaded
+                            if (loadedItems == totalItems) {
+                                buttonElement.style.display = 'none';
+                            }
+                            e.target.classList.remove('show-loader');
+                        }, 3000)
+                    });
+                })
+            }
+
+            loadMoreData('fin-load-more', 'archive-widget-1', "/LoadMore/GetBlogs", skipfin, financeUrl);
+            loadMoreData('invest-load-more', 'archive-widget-2', "/LoadMore/GetBlogs", skipInv, investmentUrl);
+
+            loadMore(btnloadMore1, "/LoadMore/GetCount", skipfin, finLoaded, finTotal);
+            loadMore(btnloadMore2, "/LoadMore/GetCount", skipInv, invLoaded, invTotal);
+
+        });
+
+    </script>
+}

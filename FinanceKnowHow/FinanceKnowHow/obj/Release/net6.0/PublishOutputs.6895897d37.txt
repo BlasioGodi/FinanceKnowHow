@@ -1,0 +1,7 @@
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\FinanceKnowHow.exe
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\FinanceKnowHow.dll
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\FinanceKnowHow.deps.json
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\FinanceKnowHow.runtimeconfig.json
+D:\Git\Websites\FinanceKnowHow\FinanceKnowHow\FinanceKnowHow\obj\Release\net6.0\PubTmp\Out\FinanceKnowHow.pdb

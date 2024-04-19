@@ -1,0 +1,135 @@
+﻿@model Controllers._FooterModel
+@{
+    ViewData["Email"] = "info@finance-knowhow.com";
+    ViewData["Contact"] = "+254 (714) 585 382, +254 (721) 262 655";
+    Model.ProjectTitle = new List<string> { "Idea1", "Idea2", "Idea3", "Idea4", "Idea5" };
+    Model.ServiceName = new List<string> { "Blog1", "Blog2", "Blog3", "Blog4", "Blog5" };
+    Model.SocialIcons = new List<string> { "fa-brands fa-facebook", "fa-brands fa-x-twitter", "fa-brands fa-instagram", "fa-brands fa-telegram" };
+    Model.SocialList = new List<string> { "social-list-facebook", "social-list-twitter", "social-list-instagram", "social-list-telegram" };
+}
+
+<footer class="site-footer">
+    <div class="site-footer__top">
+        <div class="container">
+            <div class="site-footer__top-inner">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="footer-widget__details-logo">
+                                <div class="footer-widget__about-logo">
+                                    <a>
+                                        <img src="~/lib/logo/FKHW-64x64.png" />
+                                    </a>
+                                </div>
+                                <p class="footer-widget__about-title">
+                                    We offer free unsolicited financial information.
+                                </p>
+                            </div>
+                            <p class="footer-widget__about-text-center text-center">Get in touch with us!</p>
+                            <ul class="footer-widget__about-contact list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-phone contact-icons phone"></i>
+                                    </div>
+                                    <div class="text">
+                                        <a href="">@ViewData["Contact"] </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-envelope contact-icons email"></i>
+                                    </div>
+                                    <div class="text">
+                                        <a href="mailto:info@finance-knowhow.com">@ViewData["Email"]</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__company clearfix">
+                            <h3 class="footer-widget__title">Company</h3>
+                            <ul class="footer-widget__company-list list-unstyled">
+                                <li><a target="_blank" rel="noreferrer" href="#">About us</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Finance 101</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Investments</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Wealth</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Economics</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__explore clearfix">
+                            <h3 class="footer-widget__title">Explore</h3>
+                            <ul class="footer-widget__explore-list list-unstyled">
+                                <li><a target="_blank" rel="noreferrer" href="#">Legal</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Privacy Policy</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Cookie Policy</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Advertise</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__newsletter">
+                            <h3 class="footer-widget__title">
+                                Newsletter
+                            </h3>
+                            <form class="footer-widget__newsletter-form">
+                                <div class="footer-widget__newsletter-input-box">
+                                    <input type="email" placeholder="Email address" name="email" required="">
+                                    <button type="submit" class="footer-widget__newsletter-btn">
+                                        <span class="subscribe">Subscribe</span>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="footer-widget__newsletter-bottom">
+                                <div class="footer-widget__newsletter-bottom-icon">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <div class="footer-widget__newsletter-bottom-text">
+                                    <p>I agree to all terms and policies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-footer__bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="site-footer__bottom-inner">
+                        <div class="site-footer__bottom-left">
+                            <div class="footer-widget__social">
+                                <a class="social-list-facebook" href=""><i class="fa-brands fa-facebook"></i></a>
+                                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="site-footer__bottom-right">
+                            <div class="row">
+                                <p class="col-md-6 text-center">
+                                    &copy
+                                    <span><strong>FinanceKnowHow</strong></span>
+                                    2024
+                                </p>
+                                <p class="col-md-3">
+                                    All Rights Reserved.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="site-footer__bottom-left-arrow">
+                            <a href="#" class="scroll-to-target scroll-to-top">
+                                <span class="icons fa fa-arrow-up"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

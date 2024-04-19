@@ -1,0 +1,24 @@
+﻿@model IEnumerable<FinanceKnowHow.Models.BlogPost>
+@{
+   
+}
+
+@foreach (var recent in Model)
+{
+    <div class="archive-load" id="archive-load">
+        <div class="archive-load-thumbnail">
+            <a aria-current="page" asp-area="" asp-page="/Blog/BlogPost" asp-route-pageName="@recent.PageName">
+                <img alt="@recent.ImageAlt" src="@recent.ImageUrl"
+                     class="wp-post-image">
+            </a>
+        </div>
+        <div class="archive-load-body">
+            <h4 class="archive-load-title">
+                <a aria-current="page" asp-area="" asp-page="/Blog/BlogPost" asp-route-pageName="@recent.PageName">
+                    @recent.Content
+                </a>
+            </h4>
+            <div class="archive-load-time">@recent.PublishedDate.ToString("MMM d, yyyy")</div>
+        </div>
+    </div>
+}
