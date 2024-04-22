@@ -1319,7 +1319,7 @@ body.offcanvas-open {
     padding: 0 15px;
 }
 
-.archive-load-widget article:nth-child(4) ~ article{
+.archive-load-widget article:nth-child(4) ~ article {
     display: none;
 }
 
@@ -1743,7 +1743,6 @@ body.offcanvas-open {
             font-size: 1.1rem;
         }
 
-
 .archive .archive-image {
     min-height: 30vh;
     margin-bottom: 0px;
@@ -1754,8 +1753,7 @@ body.offcanvas-open {
     font-family: var(--bs-title-font-family);
     color: white;
     position: absolute;
-    top: 35%;
-    left: 15%;
+    top: 5%;
     font-size: 3.5rem;
 }
 

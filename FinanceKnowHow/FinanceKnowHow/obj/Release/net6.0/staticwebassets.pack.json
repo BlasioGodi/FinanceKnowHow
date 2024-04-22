@@ -85,6 +85,26 @@
       "PackagePath": "staticwebassets\\data\\BlogList.json"
     },
     {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\EconomicsBlog.json",
+      "PackagePath": "staticwebassets\\data\\EconomicsBlog.json"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\FinanceBlog.json",
+      "PackagePath": "staticwebassets\\data\\FinanceBlog.json"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\InvestmentsBlog.json",
+      "PackagePath": "staticwebassets\\data\\InvestmentsBlog.json"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\PersonalBlog.json",
+      "PackagePath": "staticwebassets\\data\\PersonalBlog.json"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\TradingBlog.json",
+      "PackagePath": "staticwebassets\\data\\TradingBlog.json"
+    },
+    {
       "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -259,6 +279,34 @@
     {
       "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-10.jpg",
       "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-10.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-11.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-11.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-12.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-12.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-13.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-13.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-14.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-14.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-15.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-15.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-16.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-16.jpg"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\lib\\src\\swiper-landing\\TR-17.jpg",
+      "PackagePath": "staticwebassets\\lib\\src\\swiper-landing\\TR-17.jpg"
     },
     {
       "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\node_modules\\.package-lock.json",

@@ -391,7 +391,7 @@ a {
 /* Navbar Logo */
 .brand-logo{
     position: absolute;
-    left: 35%;
+    left: 40%;
 }
 
 /* Social Icons */
@@ -807,26 +807,6 @@ body.offcanvas-open {
 .pt-img img {
     width: 100%;
 }
-
-.load-more-items {
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 25px;
-}
-
-    .load-more-items a {
-        font-size: 16px;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-decoration: underline;
-    }
-
-        .load-more-items a:hover {
-            color: var(--theme-color);
-            text-decoration: none;
-        }
 
 .portfolio-grid.text-style .portfolio-item {
     padding: 5px;
@@ -1323,6 +1303,14 @@ body.offcanvas-open {
     display: none;
 }
 
+.btn-loading {
+    display: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Load More Button */
 .loading {
     display: none;
     width: 25px;
@@ -1407,6 +1395,7 @@ body.offcanvas-open {
 .load-more.show-loader .loading {
     display: block;
 }
+/* Load More Button */
 
     .archive-load {
     margin-bottom: 1.7em;

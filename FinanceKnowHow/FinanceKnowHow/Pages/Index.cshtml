@@ -89,13 +89,13 @@
 </section>
 
 <section class="section-blog-main" id="blog-area-1">
-    <div class="container">
+    <div class="container-lg">
         <div class="row">
-            <div id="main-content" class="col-xs-12 col-md-8">
+            <div id="main-content" class="col-lg-8 col-md-12 col-xs-12 ">
                 <div class="cols-holder">
                     <h1>Finance 101</h1>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
                                 <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
                                 <div class="text-wrap">
@@ -109,7 +109,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
                                 <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
                                 <div class="text-wrap">
@@ -147,7 +147,7 @@
                 <div class="cols-holder">
                     <h1>Trading</h1>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
                                 <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
                                 <div class="text-wrap">
@@ -161,7 +161,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
                                 <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
                                 <div class="text-wrap">
@@ -228,62 +228,66 @@
                     </div>
                 </div>
             </div>
-            <aside id="side-bar" class="col-xs-12 col-md-4">
-                <div class="widget recent-posts-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <header class="widget-head">
-                        <h3>Popular Posts</h3>
-                    </header>
-                    <ol>
-                        @{
-                            int counter = 0;
-                            foreach (var post in Model.BlogPosts)
-                            {
-                                <li>
-                                    <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
-                                    <span class="post-tag">
-                                        <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
-                                        @if (counter % 2 == 0)
-                                        {
-                                            <strong class="tag hot">@post.Category</strong>
-                                        }
-                                        else
-                                        {
-                                            <strong class="tag">@post.Category</strong>
-                                        }
-                                    </span>
-                                </li>
-                                counter++;
+            <aside id="side-bar" class="col-lg-4 col-md-12 col-xs-12 container">
+                <div class="row mx-1">
+                    <div class="widget recent-posts-widget col-lg-12 col-md-8 col-sm-8" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <header class="widget-head">
+                            <h3>Popular Posts</h3>
+                        </header>
+                        <ol>
+                            @{
+                                int counter = 0;
+                                foreach (var post in Model.BlogPosts)
+                                {
+                                    <li>
+                                        <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                        <span class="post-tag">
+                                            <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
+                                            @if (counter % 2 == 0)
+                                            {
+                                                <strong class="tag hot">@post.Category</strong>
+                                            }
+                                            else
+                                            {
+                                                <strong class="tag">@post.Category</strong>
+                                            }
+                                        </span>
+                                    </li>
+                                    counter++;
+                                }
                             }
-                        }
-                    </ol>
-                </div>
-                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
-                </div>
-                <div class="widget widget_categories tabs wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <header class="widget-head">
-                        <h3>Category</h3>
-                        <p>Browse your favorite categories</p>
-                    </header>
-                    <div class="lists-holder">
-                        <ul>
-                            <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
-                        </ul>
-                        <ul>
-                            <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
-                            <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
-                            <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
-                        </ul>
+                        </ol>
                     </div>
-                </div>
-                <div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                    <div class="col-lg-12 col-md-4 col-sm-4">
+                        <div class="widget promo-widget" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                            <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                        </div>
+                        <div class="widget widget_categories" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                            <header class="widget-head">
+                                <h3>Category</h3>
+                                <p>Browse your favorite categories</p>
+                            </header>
+                            <div class="lists-holder">
+                                <ul>
+                                    <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                                </ul>
+                                <ul>
+                                    <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
+                                    <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget promo-widget " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                            <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+                        </div>
+                    </div>
                 </div>
             </aside>
         </div>
