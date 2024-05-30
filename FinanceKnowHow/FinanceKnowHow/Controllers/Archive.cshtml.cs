@@ -8,20 +8,23 @@ namespace FinanceKnowHow.Controllers
 {
     public class ArchiveModel : BasePageModel
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public BlogPostService _BlogPostService;
         public IWebHostEnvironment _WebHostEnvironment { get; }
         public int TakeValue { get; set; }
-        public ArchiveModel(BlogPostService BlogPostService, IWebHostEnvironment WebHostEnvironment)
+        public string CurrentUrl { get; set; }
+        public ArchiveModel(BlogPostService BlogPostService, IWebHostEnvironment WebHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _BlogPostService = BlogPostService;
             _WebHostEnvironment = WebHostEnvironment;
+            _httpContextAccessor= httpContextAccessor;
         }
 
-        public void SetBlogPosts(BlogPostService blogPostService, int initialTake)
-        {
-            var setPostsInitial = blogPostService.GetBlogPosts().Take(initialTake);
-            var setPostsTotal = blogPostService.GetBlogPosts();
-        }
+        // public void SetBlogPosts(BlogPostService blogPostService, int initialTake)
+        // {
+        //     var setPostsInitial = blogPostService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(initialTake);
+        //     var setPostsTotal = blogPostService.GetBlogPosts(_httpContextAccessor.HttpContext);
+        // }
         public void OnGet()
         {
             //Set Take Value
@@ -32,24 +35,27 @@ namespace FinanceKnowHow.Controllers
             var economicsBlogService = new BlogPostService(_WebHostEnvironment, "EconomicsBlog.json");
             var investmentsBlogService = new BlogPostService(_WebHostEnvironment, "InvestmentsBlog.json");
             var personalBlogService = new BlogPostService(_WebHostEnvironment, "PersonalBlog.json");
+            var popularPostsService = new BlogPostService(_WebHostEnvironment, "PopularBlog.json");
 
-            FinancePosts = financeBlogService.GetBlogPosts().Take(3);
-            FinanceTotal = financeBlogService.GetBlogPosts();
+            BlogPosts = _BlogPostService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(3);
+            TotalPosts = _BlogPostService.GetBlogPosts(_httpContextAccessor.HttpContext);
 
-            TradingPosts = tradingBlogService.GetBlogPosts().Take(3);
-            TradingTotal = tradingBlogService.GetBlogPosts();
+            FinancePosts = financeBlogService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(3);
+            FinanceTotal = financeBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
 
-            EconomicsPosts = economicsBlogService.GetBlogPosts().Take(3);
-            EconomicsTotal = economicsBlogService.GetBlogPosts();
+            TradingPosts = tradingBlogService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(3);
+            TradingTotal = tradingBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
 
-            InvestmentPosts = investmentsBlogService.GetBlogPosts().Take(3);
-            InvestmentTotal = investmentsBlogService.GetBlogPosts();
+            EconomicsPosts = economicsBlogService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(3);
+            EconomicsTotal = economicsBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
 
-            PersonalPosts = personalBlogService.GetBlogPosts().Take(3);
-            PersonalTotal = personalBlogService.GetBlogPosts();
+            InvestmentPosts = investmentsBlogService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(3);
+            InvestmentTotal = investmentsBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
 
-            BlogPosts = _BlogPostService.GetBlogPosts().Take(3);
-            TotalPosts = _BlogPostService.GetBlogPosts();
+            PersonalPosts = personalBlogService.GetBlogPosts(_httpContextAccessor.HttpContext).Take(3);
+            PersonalTotal = personalBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
+
+            PopularPosts = popularPostsService.GetBlogPosts(_httpContextAccessor.HttpContext);
 
             CurrentDateTime = DateTime.Now;
         }

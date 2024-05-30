@@ -25,9 +25,19 @@
 }
 
 /* General Responsive Styling */
+@media (min-width: 280px) and (max-width: 576px) {
+    .post.single .post-category,
+    .archive .archive-category {
+        padding: 20.2vmin 0 20.2vmin;
+    }
+
+    .slider-nav__trading{
+        bottom: 0;
+    }
+}
+
 @media (min-width: 280px) and (max-width: 768px) {
     .section-blog-main {
-        position: relative;
         margin-top: 40px;
         margin-bottom: 40px;
     }
@@ -37,15 +47,18 @@
         padding: 10px 10px;
     }
 
+    .post.single .post-image {
+        margin-bottom: -50px;
+    }
     .trading-box_title {
         font-size: 1.5rem;
     }
 
-        .trading-box h2 {
-            margin: 0 0 10px;
-        }
+    .trading-box h2 {
+        margin: 0 0 10px;
+    }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1rem;
     }
 
@@ -126,20 +139,28 @@
         top: 13rem;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 5%;
-        font-size: 2.5rem;
-    }
-
+    .post.single .post-category,
     .archive .archive-category {
-        top: 2%;
         font-size: 2.5rem;
     }
 
     .brand-logo {
         position: absolute;
         left: 30%;
+    }
+}
+
+/* Screen Device - Galaxy Z Fold 5 - Orientation - Landscape */
+@media only screen and (width: 882px) and (height: 344px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
+    }
+}
+
+/* Screen Device - Galaxy A15/71 - Orientation - Landscape */
+@media only screen and (width: 914px) and (height: 412px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
     }
 }
 
@@ -151,6 +172,11 @@
     .main-slider {
         min-height: 70vh;
     }
+
+        .main-slider h1 {
+            line-height: 50px;
+            margin: 12px;
+        }
 
     .slider-inner {
         padding-top: 160px;
@@ -179,11 +205,6 @@
         margin-right: 20px;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -196,19 +217,14 @@
         top: 13rem;
     }
 
-    .main-slider h1 {
-        line-height: 50px;
-        margin: 12px;
+    .post.single .post-category,
+    .archive .archive-category {
+        font-size: 3rem;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
-        font-size: 3rem;
-    }
-    .archive .archive-category {
-        top: 2%;
-        font-size: 3rem;
+    .archive .archive-image,
+    .archive .image-layer-overlay {
+        min-height: 20vh;
     }
 
     .brand-logo {
@@ -253,11 +269,6 @@
         margin-right: 20px;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -280,32 +291,33 @@
         left: 35%;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3rem;
     }
-    .archive .archive-category {
-        top: 1.5%;
-        font-size: 3rem;
+
+    .archive .archive-image,
+    .archive .image-layer-overlay {
+        min-height: 20vh;
+    }
+}
+/* Screen Device - iPhone XR  - Orientation - Landscape */
+@media only screen and (width: 896px) and (height: 414px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
     }
 }
 
 /* Screen Device - iPhone 12 Pro */
 @media only screen and (min-width: 390px) and (max-width: 412px) {
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
-        font-size: 3rem;
-    }
+    .post.single .post-category, 
     .archive .archive-category {
-        top: 2.5%;
         font-size: 3rem;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
+    .archive .archive-image,
+    .archive .image-layer-overlay {
+        min-height: 20vh;
     }
 
     .slider-nav__trading .slider-button-prev_trading {
@@ -314,6 +326,20 @@
 
     .slider-nav__trading .slider-button-next_trading {
         right: -15%;
+    }
+}
+
+/* Screen Device - iPhone 12 Pro - Orientation - Landscape */
+@media only screen and (width: 844px) and (height: 390px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
+    }
+}
+
+/* Screen Device - iPhone 14 Pro Max - Orientation - Landscape */
+@media only screen and (width: 932px) and (height: 430px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
     }
 }
 
@@ -331,15 +357,15 @@
         position: absolute;
         left: 35%;
     }
-    .post.single .post-category {
-        top: 40%;
-        left:7%;
+
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3rem;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
+    .archive .archive-image,
+    .archive .image-layer-overlay {
+        min-height: 20vh;
     }
 
     .slider-nav__trading .slider-button-prev_trading {
@@ -348,6 +374,13 @@
 
     .slider-nav__trading .slider-button-next_trading {
         right: -15%;
+    }
+}
+
+/* Screen Device - Pixel 7 /  Samsung Galaxy S20 Ultra  - Orientation - Landscape */
+@media only screen and (width: 915px) and (height: 412px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
     }
 }
 
@@ -383,11 +416,6 @@
         margin-right: 20px;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -409,14 +437,15 @@
         position: absolute;
         left: 35%;
     }
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
+
+    .post.single .post-category, 
+    .archive .archive-category {
         font-size: 3rem;
     }
-    .archive .archive-category {
-        top: 3%;
-        font-size: 3rem;
+
+    .archive .archive-image,
+    .archive .image-layer-overlay {
+        min-height: 20vh;
     }
 }
 /* Screen Device - Surface Pro Duo */
@@ -425,6 +454,7 @@
         padding: 20px;
         width: 100%;
     }
+
     .slider-inner {
         padding-top: 100px;
     }
@@ -436,11 +466,6 @@
         .slider-inner p {
             font-size: 1.5rem;
         }
-
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 38%;
-    }
 
     .slider-nav__trading .slider-button-prev_trading {
         left: -10%;
@@ -491,9 +516,8 @@
         margin-right: 20px;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3.5rem;
     }
 
@@ -518,8 +542,58 @@
     .slider-nav__trading .slider-button-next_trading {
         top: -10%;
     }
-
 }
+
+@media only screen and (min-width: 730px) and (max-width: 745px) {
+    .section-blog-main {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .main-slider {
+        min-height: 80vh;
+    }
+
+        .main-slider h1 {
+            line-height: 50px;
+        }
+
+    .slider-inner {
+        padding-top: 100px;
+    }
+
+        .slider-inner h1 {
+            font-size: 3rem;
+        }
+
+        .slider-inner p {
+            font-size: 1.5rem;
+        }
+
+    .slider-button-next,
+    .slider-button-prev {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+    }
+
+    .slider-button-prev {
+        margin-left: 20px;
+    }
+
+    .slider-button-next {
+        margin-right: 20px;
+    }
+
+    .cols-holder .img-holder, .cols-holder .video-holder, .cols-holder .carousel {
+        max-height: 450px;
+    }
+
+        .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
+            max-height: none;
+        }
+}
+
 @media (min-width: 760px) and (max-width: 768px) {
     .main-slider {
         min-height: 60vh;
@@ -552,24 +626,28 @@
         margin-right: 20px;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3.5rem;
     }
+
     .trading-box {
         padding: 30px;
         width: 100%;
     }
+
     .cols-holder .img-holder, .cols-holder .video-holder, .cols-holder .carousel {
         max-height: 350px;
     }
+
     .slider-nav__trading .slider-button-prev_trading {
         left: 0%;
     }
+
     .slider-nav__trading .slider-button-next_trading {
         right: 0%;
     }
+
     .slider-nav__trading .slider-button-prev_trading,
     .slider-nav__trading .slider-button-next_trading {
         top: -10%;
@@ -580,9 +658,11 @@
     .main-slider {
         min-height: 60vh;
     }
+
     .slider-inner {
         padding-top: 200px;
     }
+
         .slider-inner h1 {
             font-size: 4rem;
         }
@@ -612,24 +692,32 @@
     }
 }
 
+/* Screen Device - iPad Mini  - Orientation - Landscape */
+@media only screen and (width: 1024px) and (height: 768px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
+    }
+}
+
 /* Screen Device - iPad Pro */
 @media (min-width: 768px) and (max-width: 768px) {
     .brand-logo {
         position: absolute;
         left: 40%;
     }
-    .post.single .post-category {
-        top: 40%;
-        left: 4%;
+
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3.5rem;
     }
 }
 
 /* Screen Device - iPad Air */
-@media only screen and (min-width:745px) and (max-width: 810px) {
+@media only screen and (min-width:745px) and (max-width: 810px) {  
     .main-slider {
-        min-height:55vh;
+        min-height: 55vh;
     }
+
     .slider-inner {
         padding-top: 200px;
     }
@@ -664,9 +752,8 @@
         margin-right: 20px;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3.5rem;
     }
 
@@ -674,6 +761,7 @@
         padding: 30px;
         width: 100%;
     }
+
     .trading-box_title {
         font-size: 2rem;
     }
@@ -682,7 +770,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1rem;
     }
 
@@ -709,9 +797,102 @@
     }
 }
 
+/* Screen Device - iPad Air  - Orientation - Landscape */
+@media only screen and (width: 1180px) and (height: 820px) {
+    .post.single .post-image {
+        margin-bottom: -50px;
+    }
+}
+
+@media only screen and (min-width: 840px) and (max-width: 850px) {
+    .section-blog-main {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .main-slider h1 {
+        line-height: 50px;
+    }
+
+    .slider-inner {
+        padding-top: 140px;
+    }
+
+        .slider-inner h1 {
+            font-size: 3rem;
+        }
+
+        .slider-inner p {
+            font-size: 1.5rem;
+        }
+    .cols-holder .img-holder, .cols-holder .video-holder, .cols-holder .carousel {
+        max-height: 450px;
+    }
+
+        .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
+            max-height: none;
+        }
+}
+
+@media only screen and (min-width: 895px) and (max-width: 900px) {
+    .main-slider h1 {
+        line-height: 50px;
+    }
+
+    .slider-inner {
+        padding-top: 140px;
+    }
+
+        .slider-inner h1 {
+            font-size: 3rem;
+        }
+
+        .slider-inner p {
+            font-size: 1.5rem;
+        }
+
+    .cols-holder .img-holder, .cols-holder .video-holder, .cols-holder .carousel {
+        max-height: 450px;
+    }
+
+        .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
+            max-height: none;
+        }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 916px) {
+    .section-blog-main {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .main-slider {
+        min-height: 80vh;
+    }
+    .main-slider h1 {
+        line-height: 50px;
+    }
+
+    .slider-inner {
+        padding-top: 100px;
+    }
+
+        .slider-inner h1 {
+            font-size: 3rem;
+        }
+
+        .slider-inner p {
+            font-size: 1.5rem;
+        }
+    .cols-holder .img-holder, .cols-holder .video-holder, .cols-holder .carousel {
+        max-height: 450px;
+    }
+
+        .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
+            max-height: none;
+        }
+}
 
 /* Screen Device - iPad Pro */
-@media only screen and (min-width: 900px) and (max-width: 991px){
+@media only screen and (min-width: 900px) and (max-width: 991px) {
     .slider-button-next_trading, .slider-button-prev_trading {
         width: 50px;
         height: 50px;
@@ -732,12 +913,6 @@
 
     .slider-button-next {
         margin-right: 20px;
-    }
-
-    .post.single .post-category {
-        top: 35%;
-        left: 7%;
-        font-size: 3.5rem;
     }
 
     .trading-box {
@@ -767,11 +942,10 @@
         padding-bottom: 10px;
     }
 
-    .post.single .post-category {
-        top: 40%;
-        left: 5%;
-        font-size: 4rem;
-    } 
+    .post.single .post-category,
+    .archive .archive-category {
+        font-size: 3.5rem;
+    }
 }
 /* Screen Device - Surface Pro 7 */
 @media (min-width: 912px) and (max-width: 912px) {
@@ -819,7 +993,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1.2rem;
     }
 
@@ -831,9 +1005,9 @@
             max-height: none;
         }
 
-        .slider-nav__trading .slider-button-prev_trading {
-            left: 0%;
-        }
+    .slider-nav__trading .slider-button-prev_trading {
+        left: 0%;
+    }
 
     .slider-nav__trading .slider-button-next_trading {
         right: 0%;
@@ -854,20 +1028,27 @@
     }
 }
 
-@media (min-width: 920px) and (max-width: 1199px) {
+/* Screen Device - iPad Pro */
+@media (min-width: 935px) and (max-width: 1020px) {
     .main-slider {
         min-height: 50vh;
     }
+
+        .main-slider h1 {
+            line-height: 50px;
+        }
+
     .slider-inner {
         padding-top: 200px;
     }
-    .slider-inner h1 {
-        font-size: 4rem;
-    }
 
-    .slider-inner p {
-        font-size: 2rem;
-    }
+        .slider-inner h1 {
+            font-size: 3rem;
+        }
+
+        .slider-inner p {
+            font-size: 1.5rem;
+        }
 
     .slider-button-prev {
         margin-left: 50px;
@@ -886,6 +1067,56 @@
     .footer-widget__company-list li,
     .footer-widget__explore-list li {
         padding-bottom: 10px;
+    }
+
+    .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        max-width: none;
+        max-height: none;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1099px) {
+    .section-blog-main {
+        position: relative;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .main-slider {
+        min-height: 70vh;
+    }
+
+        .main-slider h1 {
+            line-height: 50px;
+        }
+
+    .slider-inner {
+        padding-top: 200px;
+    }
+
+        .slider-inner h1 {
+            font-size: 3rem;
+        }
+
+        .slider-inner p {
+            font-size: 1.5rem;
+        }
+
+    .slider-button-next,
+    .slider-button-prev {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+    }
+
+    .slider-button-next_trading, .slider-button-prev_trading {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
     }
 
     .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
@@ -955,7 +1186,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1.2rem;
     }
 
@@ -964,9 +1195,8 @@
         padding-bottom: 10px;
     }
 
-    .post.single .post-category {
-        top: 35%;
-        left: 5%;
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3.5rem;
     }
 
@@ -993,25 +1223,59 @@
         margin: 0 0 15px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1.5rem;
         padding: 20px;
     }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
-    .post.single .post-category {
-        top: 35%;
-        left: 8%;
+    .post.single .post-category,
+    .archive .archive-category {
         font-size: 3rem;
     }
 }
 
+@media (min-width: 1520px) and (max-width: 1720px) {
+    .main-slider {
+        min-height: 80vh;
+    }
+
+        .main-slider h1 {
+            line-height: 50px;
+        }
+
+    .slider-inner {
+        padding-top: 200px;
+    }
+
+        .slider-inner h1 {
+            font-size: 4rem;
+        }
+
+        .slider-inner p {
+            font-size: 2rem;
+        }
+
+    .slider-button-prev {
+        margin-left: 50px;
+    }
+
+    .slider-button-next {
+        margin-right: 50px;
+    }
+
+    .section-blog-main {
+        position: relative;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
 @media only screen and (min-width: 1600px) and (max-width: 4000px) {
-    .post.single .post-category {
-        top: 35%;
-        left: 22%;
-        font-size: 3rem;
+    .post.single .post-category,
+    .archive .archive-category {
+        font-size: 3.5rem;
     }
 }
 
@@ -1166,13 +1430,13 @@
         margin: 0 0 5px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 0.8rem;
     }
 
     .slider-nav__trading .slider-button-prev_trading,
     .slider-nav__trading .slider-button-next_trading {
-        top: 25%;
+        bottom: 25%;
     }
 
     .slider-nav__trading .slider-button-prev_trading {
@@ -1235,11 +1499,3 @@
         border-radius: 10px;
     }
 }
-
-
-
-
-
-
-
-

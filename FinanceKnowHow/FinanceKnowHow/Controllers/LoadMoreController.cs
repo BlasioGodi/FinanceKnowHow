@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  using FinanceKnowHow.Models;
+using FinanceKnowHow.Models;
 using FinanceKnowHow.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,13 +8,14 @@ namespace FinanceKnowHow.Controllers
     public class LoadMoreController : Controller
     {
         private readonly BlogPostService _blogPostService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public IWebHostEnvironment _WebHostEnvironment { get; }
         public IEnumerable<BlogPost> BlogPosts { get; set; }
-       
-        public LoadMoreController(BlogPostService blogPostService, IWebHostEnvironment webHostEnvironment)
+        public LoadMoreController(BlogPostService blogPostService, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _blogPostService = blogPostService;
             _WebHostEnvironment = webHostEnvironment;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public IActionResult Index()
@@ -28,7 +29,7 @@ namespace FinanceKnowHow.Controllers
             {
                 var blogPostService = new BlogPostService(_WebHostEnvironment, blogServiceUrl);
 
-                BlogPosts = blogPostService.GetBlogPosts().Skip(skip).Take(take);
+                BlogPosts = blogPostService.GetBlogPosts(_httpContextAccessor.HttpContext).Skip(skip).Take(take);
                 return PartialView("_additionalBlogs", BlogPosts);
             }
             catch (Exception ex)
@@ -40,7 +41,7 @@ namespace FinanceKnowHow.Controllers
         [HttpGet("/LoadMore/GetCount")]
         public IActionResult GetCount(int skip, int take)
         {
-            var getData = _blogPostService.GetBlogPosts().Skip(skip).Take(take);
+            var getData = _blogPostService.GetBlogPosts(_httpContextAccessor.HttpContext).Skip(skip).Take(take);
             return Json(getData);
         }
     }

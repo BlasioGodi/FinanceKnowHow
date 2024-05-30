@@ -1,0 +1,7 @@
+﻿@model string
+
+@using (Html.BeginForm("SearchResults", "Search", FormMethod.Get, new { @id = "contact-form", @class = "d-flex" }))
+{
+    @Html.TextBox("query", Model, new { @type = "text", @class = "form-control me-2 form_input", @id = "searchBox_2", @name = "query", @placeholder = "Enter your search here...", @required = "required" })
+    <button id="sub_button" class="btn btn-primary border-2 btn-outline-dark search-btn form_button" type="submit">Search Again</button>
+}

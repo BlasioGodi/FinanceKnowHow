@@ -1,4 +1,5 @@
 ﻿@page
+@using FinanceKnowHow.Controllers
 @model FinanceKnowHow.Controllers.IndexModel
 @{
     ViewData["Title"] = "Home";
@@ -6,7 +7,7 @@
 
 @section MetaTags {
     <meta name="description"
-          content="">
+          content="We offer free and unsolicited financial information as it happens around the world. Learn with us!">
     <meta property="og:title" content="Finance KnowHow">
     <meta property="og:description"
           content="We offer free and unsolicited financial information as it happens around the world. Learn with us!">
@@ -20,61 +21,26 @@
 <section id="main-slider" class="position-relative main-slider">
     <div class="swiper swiper-landing">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-01.jpg)">
-                </div>
-                <div class="image-layer-overlay"></div>
-                <div class="container">
-                    <div class="slider-inner">
-                        <h1>The Forex Market</h1>
-                        <a class="slider-link">Continue reading</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-02.jpg)">
-                </div>
-                <div class="image-layer-overlay"></div>
-                <div class="container">
-                    <div class="slider-inner">
-                        <h1>Economics at a glance</h1>
-                        <a class="slider-link">Continue reading</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-03.jpg)">
-                </div>
-                <div class="image-layer-overlay"></div>
-                <div class="container">
-                    <div class="slider-inner">
-                        <h1>Is a recession long overdue?</h1>
-                        <a class="slider-link">Continue reading</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-04.jpg)">
-                </div>
-                <div class="image-layer-overlay"></div>
-                <div class="container">
-                    <div class="slider-inner">
-                        <h1>Finance 101</h1>
-                        <a class="slider-link">Continue reading</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="image-layer" style="background-image: url(/lib/src/swiper-landing/TR-05.jpg)">
-                </div>
-                <div class="image-layer-overlay"></div>
-                <div class="container">
-                    <div class="slider-inner">
-                        <h1>Maintaining a Budget</h1>
-                        <a class="slider-link">Continue reading</a>
-                    </div>
-                </div>
-            </div>
+            @{
+                if (Model.TopPosts != null)
+                {
+                    for (var i = 0; i < 5; i++)
+                    {
+                        var topPost = Model.TopPosts.ElementAt(i);
+                        <div class="swiper-slide">
+                            <div class="image-layer" style="background-image: url(@topPost.ImageUrl)">
+                            </div>
+                            <div class="image-layer-overlay"></div>
+                            <div class="container">
+                                <div class="slider-inner">
+                                    <h1>@topPost.Highlight</h1>
+                                    <a class="slider-link" asp-page="/Blog/BlogPost" asp-route-pageName="@topPost.PageName">Continue reading</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
         </div>
         <div class="slider-nav">
             <div class="slider-button-prev">
@@ -95,127 +61,163 @@
                 <div class="cols-holder">
                     <h1>Finance 101</h1>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
-                                <div class="text-wrap">
-                                    <time datetime="2011-01-12">25th May - <a href="#">Finance 101</a></time>
-                                    <h2><a href="">Understanding your finances is the key to your freedom!</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
-                                    <div class="d-inline-flex justify-content-between w-100">
-                                        <a href="" class="link-more">Read more</a>
-                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                        @{
+                            if (Model.FinancePosts != null)
+                            {
+                                for (var i = 0; i < 2; i++)
+                                {
+                                    var financeBlog = Model.FinancePosts.ElementAt(i);
+
+                                    // Extract the day part from the published date
+                                    string day = financeBlog.PublishedDate.ToString("dd");
+
+                                    var fetchSuffix = new DateSuffix();
+
+                                    var suffix = fetchSuffix.GetSuffix(day);
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <article class="post">
+                                            <div class="img-holder">
+                                                <a asp-page="/Blog/BlogPost" asp-route-pageName="@financeBlog.PageName">
+                                                    <img src="@financeBlog.ImageUrl" alt="@financeBlog.ImageAlt">
+                                                </a>
+                                            </div>
+                                            <div class="text-wrap">
+                                                <time>
+                                                    @day@suffix @financeBlog.PublishedDate.ToString("MMM") - @financeBlog.Category
+                                                </time>
+                                                <h2><a asp-page="/Blog/BlogPost" asp-route-pageName="@financeBlog.PageName">@financeBlog.Highlight</a></h2>
+                                                <p>@financeBlog.Summary</p>
+                                                <div class="d-inline-flex justify-content-between w-100">
+                                                    <a asp-page="/Blog/BlogPost" asp-route-pageName="@financeBlog.PageName" class="link-more">Read more</a>
+                                                    <span class="text-right"><i class="fa fa-clock"></i>@financeBlog.Read read</span>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
-                                <div class="text-wrap">
-                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
-                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
-                                    <div class="d-inline-flex justify-content-between w-100">
-                                        <a href="" class="link-more">Read more</a>
-                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                                }
+                            }
+                        }
                     </div>
                 </div>
+
                 <div class="cols-holder">
                     <h1>Economics</h1>
                     <div class="row">
-                        <div class="col-md-12">
-                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
-                                <div class="text-wrap text-center">
-                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
-                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
-                                    <div class="d-inline-flex justify-content-between w-100">
-                                        <a href="" class="link-more">Read more</a>
-                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                        @{
+                            if (Model.EconomicsPosts != null)
+                            {
+                                for (var i = 0; i < 1; i++)
+                                {
+                                    var economicsBlog = Model.EconomicsPosts.ElementAt(i);
+
+                                    // Extract the day part from the published date
+                                    string day = economicsBlog.PublishedDate.ToString("dd");
+
+                                    var fetchSuffix = new DateSuffix();
+
+                                    var suffix = fetchSuffix.GetSuffix(day);
+
+                                    <div class="col-md-12">
+                                        <article class="post">
+                                            <div class="img-holder">
+                                                <a asp-page="/Blog/BlogPost" asp-route-pageName="@economicsBlog.PageName">
+                                                    <img class="img-wrap" src="@economicsBlog.ImageUrl" alt="@economicsBlog.ImageAlt">
+                                                </a>
+                                            </div>
+                                            <div class="text-wrap text-center">
+                                                <time>
+                                                    @day@suffix @economicsBlog.PublishedDate.ToString("MMM") - @economicsBlog.Category
+                                                </time>
+                                                <h2><a asp-page="/Blog/BlogPost" asp-route-pageName="@economicsBlog.PageName">@economicsBlog.Highlight</a></h2>
+                                                <p>@economicsBlog.Summary</p>
+                                                <div class="d-inline-flex justify-content-between w-100">
+                                                    <a asp-page="/Blog/BlogPost" asp-route-pageName="@economicsBlog.PageName" class="link-more">Read more</a>
+                                                    <span class="text-right"><i class="fa fa-clock"></i>@economicsBlog.Read read</span>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
+                                }
+                            }
+                        }
+
                     </div>
                 </div>
+
                 <div class="cols-holder">
                     <h1>Trading</h1>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description"></a></div>
-                                <div class="text-wrap">
-                                    <time datetime="2011-01-12">25th May - <a href="#">Finance 101</a></time>
-                                    <h2><a href="">Understanding your finances is the key to your freedom!</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
-                                    <div class="d-inline-flex justify-content-between w-100">
-                                        <a href="" class="link-more">Read more</a>
-                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
+                        @{
+                            if (Model.TradingPosts != null)
+                            {
+                                for (var i = 0; i < 2; i++)
+                                {
+                                    var tradingBlog = Model.TradingPosts.ElementAt(i);
+
+                                    // Extract the day part from the published date
+                                    string day = tradingBlog.PublishedDate.ToString("dd");
+
+                                    var fetchSuffix = new DateSuffix();
+
+                                    var suffix = fetchSuffix.GetSuffix(day);
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <article class="post">
+                                            <div class="img-holder">
+                                                <a asp-page="/Blog/BlogPost" asp-route-pageName="@tradingBlog.PageName">
+                                                    <img src="@tradingBlog.ImageUrl" alt="@tradingBlog.ImageAlt">
+                                                </a>
+                                            </div>
+                                            <div class="text-wrap">
+                                                <time>
+                                                    @day@suffix @tradingBlog.PublishedDate.ToString("MMM") - @tradingBlog.Category
+                                                </time>
+                                                <h2><a asp-page="/Blog/BlogPost" asp-route-pageName="@tradingBlog.PageName">@tradingBlog.Highlight</a></h2>
+                                                <p>@tradingBlog.Summary</p>
+                                                <div class="d-inline-flex justify-content-between w-100">
+                                                    <a asp-page="/Blog/BlogPost" asp-route-pageName="@tradingBlog.PageName" class="link-more">Read more</a>
+                                                    <span class="text-right"><i class="fa fa-clock"></i>@tradingBlog.Read read</span>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                <div class="img-holder"><a href=""><img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description"></a></div>
-                                <div class="text-wrap">
-                                    <time datetime="2011-01-12">25th May - <a href="#">Investments</a></time>
-                                    <h2><a href="">Understanding stocks, bonds, treasury bills as investments.</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt...</p>
-                                    <div class="d-inline-flex justify-content-between w-100">
-                                        <a href="" class="link-more">Read more</a>
-                                        <span class="text-right"><i class="fa fa-clock"></i>4 min read</span>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                                }
+                            }
+                        }
                     </div>
                 </div>
+
                 <div class="cols-holder">
                     <div class="swiper swiper-announcements mb-4">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                    <div class="img-holder">
-                                        <a href="">
-                                            <div class="image-layer-overlay">
-                                                <div class="trading-box">
-                                                    <h2 class="trading-box_title">News Headline</h2>
-                                                    <p>
-                                                        The annual White House budget proposal is expected to draw from a stockpile of policy goals President Biden has held for
-                                                        years, including subsidized child care and in-home care for the elderly
-                                                    </p>
+                            @{
+                                if (Model.TrendingPosts != null)
+                                {
+                                    for (var i = 0; i < 5; i++)
+                                    {
+                                        var announcements = Model.TrendingPosts.ElementAt(i);
+
+                                        <div class="swiper-slide">
+                                            <article class="post">
+                                                <div class="img-holder">
+                                                    <div class="image-layer-overlay">
+                                                        <div class="trading-box">
+                                                            <h2 class="trading-box_title">@announcements.Title</h2>
+                                                            
+                                                                <a asp-page="/Blog/BlogPost" asp-route-pageName="@announcements.PageName">
+                                                                    @announcements.Summary
+                                                                </a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <img src="@announcements.ImageUrl" alt="@announcements.ImageAlt" class="swipe">
                                                 </div>
-                                            </div>
-                                            <img src="~/lib/src/swiper-landing/TR-01.jpg" alt="image description" class="swipe">
-                                        </a>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="post wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                                    <div class="img-holder">
-                                        <a href="">
-                                            <div class="image-layer-overlay">
-                                                <div class="trading-box">
-                                                    <h2 class="trading-box_title">News Headline</h2>
-                                                    <p>
-                                                        The annual White House budget proposal is expected to draw from a stockpile of policy goals President Biden has held for
-                                                        years, including subsidized child care and in-home care for the elderly
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <img src="~/lib/src/swiper-landing/TR-02.jpg" alt="image description" class="swipe">
-                                        </a>
-                                    </div>
-                                </article>
-                            </div>
+                                            </article>
+                                        </div>
+                                    }
+                                }
+                            }
                             <div class="slider-nav__trading">
                                 <div class="slider-button-prev_trading">
                                     <span class="fa fa-arrow-right"></span>
@@ -230,36 +232,40 @@
             </div>
             <aside id="side-bar" class="col-lg-4 col-md-12 col-xs-12 container">
                 <div class="row mx-1">
-                    <div class="widget recent-posts-widget col-lg-12 col-md-8 col-sm-8" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <div class="widget recent-posts-widget col-lg-12 col-md-8 col-sm-8">
                         <header class="widget-head">
                             <h3>Popular Posts</h3>
                         </header>
                         <ol>
                             @{
                                 int counter = 0;
-                                foreach (var post in Model.BlogPosts)
+                                if (Model.BlogPosts != null)
                                 {
-                                    <li>
-                                        <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
-                                        <span class="post-tag">
-                                            <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
-                                            @if (counter % 2 == 0)
-                                            {
-                                                <strong class="tag hot">@post.Category</strong>
-                                            }
-                                            else
-                                            {
-                                                <strong class="tag">@post.Category</strong>
-                                            }
-                                        </span>
-                                    </li>
-                                    counter++;
+                                    for (var i = 0; i < 5; i++)
+                                    {
+                                        var post = Model.BlogPosts.ElementAt(i);
+                                        <li>
+                                            <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                            <span class="post-tag">
+                                                <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
+                                                @if (counter % 2 == 0)
+                                                {
+                                                    <strong class="tag hot">@post.Category</strong>
+                                                }
+                                                else
+                                                {
+                                                    <strong class="tag">@post.Category</strong>
+                                                }
+                                            </span>
+                                        </li>
+                                        counter++;
+                                    }
                                 }
                             }
                         </ol>
                     </div>
                     <div class="col-lg-12 col-md-4 col-sm-4">
-                        <div class="widget promo-widget" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <div class="widget promo-widget">
                             <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
                         </div>
                         <div class="widget widget_categories" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
@@ -269,22 +275,22 @@
                             </header>
                             <div class="lists-holder">
                                 <ul>
-                                    <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Lifestyle </a> (23)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Movie </a> (02)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Travel </a> (11)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Sports </a> (05)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Music </a> (01)</li>
                                 </ul>
                                 <ul>
-                                    <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
-                                    <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Education </a> (15)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">International </a> (09)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Design </a> (26)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">News </a> (01)</li>
+                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Review </a> (14)</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="widget promo-widget " data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <div class="widget promo-widget ">
                             <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
                         </div>
                     </div>
@@ -298,17 +304,22 @@
     <div class="recent-container-box clearfix">
         <h2>Most Recent Posts</h2>
         <div class="owl-four owl-carousel">
-            @foreach (var post in Model.BlogPosts)
-            {
-                <div class="recent-img-box project">
-                    <img src="@post.ImageUrl" width="285" height="285" alt="@post.ImageAlt" class="img-fluid" />
-                    <div class="news-box text-center">
-                        <div class="news-box_title">@post.Title</div>
-                        <div class="text">
-                            <a asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Highlight</a>
+            @{
+                if (Model.BlogPosts != null)
+                {
+                    foreach (var post in Model.BlogPosts)
+                    {
+                        <div class="recent-img-box project">
+                            <img src="@post.ImageUrl" width="285" height="285" alt="@post.ImageAlt" class="img-fluid" />
+                            <div class="news-box text-center">
+                                <div class="news-box_title">@post.Title</div>
+                                <div class="text">
+                                    <a asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Highlight</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    }
+                }
             }
         </div>
     </div>

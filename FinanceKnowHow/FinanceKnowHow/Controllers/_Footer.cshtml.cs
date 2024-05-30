@@ -14,7 +14,7 @@ namespace FinanceKnowHow.Controllers
         }
         public void OnGet()
         {
-            BlogPosts = _BlogPostService.GetBlogPosts();
+            BlogPosts = _BlogPostService.GetBlogPostsNoHttp();
         }
     }
 }

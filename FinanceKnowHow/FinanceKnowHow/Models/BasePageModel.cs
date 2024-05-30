@@ -6,27 +6,29 @@ namespace FinanceKnowHow.Models
 {
     public class BasePageModel : PageModel
     {
-        public IEnumerable<BlogPost> BlogPosts { get; set; }
-        public IEnumerable<BlogPost> TotalPosts { get; set; }
-        public IEnumerable<BlogPost> FinancePosts { get; set; }
-        public IEnumerable<BlogPost> FinanceTotal { get; set; }
-        public IEnumerable<BlogPost> InvestmentPosts { get; set; }
-        public IEnumerable<BlogPost> InvestmentTotal { get; set; }
-        public IEnumerable<BlogPost> TradingPosts { get; set; }
-        public IEnumerable<BlogPost> TradingTotal { get; set; }
-        public IEnumerable<BlogPost> EconomicsPosts { get; set; }
-        public IEnumerable<BlogPost> EconomicsTotal { get; set; }
-        public IEnumerable<BlogPost> PersonalPosts { get; set; }
-        public IEnumerable<BlogPost> PersonalTotal { get; set; }
-        public List<string> Economics { get; set; }
-        public List<string> Trading { get; set; }
-        public List<string> Investments { get; set; }
-        public List<string> Business { get; set; }
-        public List<string> PersonalFinance { get; set; }
-        public List<string> ServiceName { get; set; }
-        public List<string> ProjectTitle { get; set; }
-        public List<string> SocialIcons { get; set; }
-        public List<string> SocialList { get; set; }
+        public IEnumerable<BlogPost>? BlogPosts { get; set; }
+        public IEnumerable<BlogPost>? PopularPosts{ get; set; }
+        public IEnumerable<BlogPost>? TotalPosts { get; set; }
+        public IEnumerable<BlogPost>? FinancePosts { get; set; }
+        public IEnumerable<BlogPost>? FinanceTotal { get; set; }
+        public IEnumerable<BlogPost>? InvestmentPosts { get; set; }
+        public IEnumerable<BlogPost>? InvestmentTotal { get; set; }
+        public IEnumerable<BlogPost>? TradingPosts { get; set; }
+        public IEnumerable<BlogPost>? TradingTotal { get; set; }
+        public IEnumerable<BlogPost>? EconomicsPosts { get; set; }
+        public IEnumerable<BlogPost>? EconomicsTotal { get; set; }
+        public IEnumerable<BlogPost>? PersonalPosts { get; set; }
+        public IEnumerable<BlogPost>? PersonalTotal { get; set; }
+        public List<string>? Finance { get; set; }
+        public List<string>? Economics { get; set; }
+        public List<string>? Trading { get; set; }
+        public List<string>? Investments { get; set; }
+        public List<string>? Business { get; set; }
+        public List<string>? PersonalFinance { get; set; }
+        public List<string>? ServiceName { get; set; }
+        public List<string>? ProjectTitle { get; set; }
+        public List<string>? SocialIcons { get; set; }
+        public List<string>? SocialList { get; set; }
         public string Theme { get; set; } = "light"; // Default to light
         public DateTime CurrentDateTime { get; set; }
         public void GetTheme(string Theme)

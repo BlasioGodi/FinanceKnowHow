@@ -44,6 +44,56 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Annytab.Stemmer": {
+              "target": "Package",
+              "version": "[1.2.4, )"
+            },
+            "LemmaGenerator": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Porter2Stemmer": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Porter2StemmerStandard": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "PorterStemmer": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "StemmersNet": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "StemmersNet.Standard": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

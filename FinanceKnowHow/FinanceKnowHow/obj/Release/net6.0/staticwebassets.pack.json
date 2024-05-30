@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\data\\BlogList.json"
     },
     {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\BusinessBlog.json",
+      "PackagePath": "staticwebassets\\data\\BusinessBlog.json"
+    },
+    {
       "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\EconomicsBlog.json",
       "PackagePath": "staticwebassets\\data\\EconomicsBlog.json"
     },
@@ -101,8 +105,20 @@
       "PackagePath": "staticwebassets\\data\\PersonalBlog.json"
     },
     {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\PopularBlog.json",
+      "PackagePath": "staticwebassets\\data\\PopularBlog.json"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\TopBlog.json",
+      "PackagePath": "staticwebassets\\data\\TopBlog.json"
+    },
+    {
       "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\TradingBlog.json",
       "PackagePath": "staticwebassets\\data\\TradingBlog.json"
+    },
+    {
+      "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\data\\TrendingBlog.json",
+      "PackagePath": "staticwebassets\\data\\TrendingBlog.json"
     },
     {
       "Id": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\wwwroot\\favicon.ico",

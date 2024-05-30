@@ -23,7 +23,13 @@
         <div class="post single">
             <div class="image-layer-overlay"></div>
             <div class="post-image">
-                <h1 class="post-category">@Model.BlogPostPage.Category</h1>
+                <div class="container-lg">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="post-category">@Model.BlogPostPage.Category</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -103,7 +109,9 @@
                                 if (post.Id != Model.BlogPostPage.Id)
                                 {
                                     <li>
-                                        <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                        <h4>
+                                            <a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a>
+                                        </h4>
                                         <span class="post-tag">
                                             <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
                                             @if (counter % 2 == 0)
@@ -133,18 +141,38 @@
                     </header>
                     <div class="lists-holder">
                         <ul>
-                            <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Lifestyle </a> (23)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Movie </a> (02)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Travel </a> (11)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Sports </a> (05)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Music </a> (01)
+                            </li>
                         </ul>
                         <ul>
-                            <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
-                            <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
-                            <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
-                            <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Education </a> (15)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">International </a> (09)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Design </a> (26)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">News </a> (01)
+                            </li>
+                            <li class="cat-item cat-item-1">
+                                <a href="#">Review </a> (14)
+                            </li>
                         </ul>
                     </div>
                 </div>

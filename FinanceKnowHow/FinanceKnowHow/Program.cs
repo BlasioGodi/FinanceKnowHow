@@ -1,11 +1,17 @@
+using FinanceKnowHow.DBContext;
+using FinanceKnowHow.Models;
 using FinanceKnowHow.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<BlogPostService>();
+builder.Services.AddDbContext<ApplicationDBContext>();
+builder.Services.AddTransient<SearchInput>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddServerSideBlazor();
+
 builder.Services.AddLogging();
 
 var app = builder.Build();

@@ -5595,6 +5595,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Annytab.Stemmer" Version="1.2.4" />
+    <PackageReference Include="LemmaGenerator" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Porter2Stemmer" Version="1.0.0" />
+    <PackageReference Include="Porter2StemmerStandard" Version="1.1.0" />
+    <PackageReference Include="PorterStemmer" Version="1.0.0" />
+    <PackageReference Include="StemmersNet" Version="1.1.1" />
+    <PackageReference Include="StemmersNet.Standard" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="wwwroot\node_modules\%40popperjs\core\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\node_modules\%40popperjs\core\lib\createPopper.d.ts" />
     <TypeScriptCompile Include="wwwroot\node_modules\%40popperjs\core\lib\dom-utils\contains.d.ts" />

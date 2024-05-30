@@ -8,9 +8,11 @@ namespace FinanceKnowHow.Controllers
     public class BlogPostModel : BasePageModel
     {
         private readonly BlogPostService _blogPostService;
-        public BlogPostModel(BlogPostService blogPostService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public BlogPostModel(BlogPostService blogPostService, IHttpContextAccessor httpContextAccessor)
         {
             _blogPostService = blogPostService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public BlogPost BlogPostId { get; private set; }
         public BlogPost BlogPostTitle { get; private set; }
@@ -20,10 +22,10 @@ namespace FinanceKnowHow.Controllers
         {
             Theme = "light"; // Set the theme to light for this blog post page
             base.GetTheme(Theme);
-            BlogPosts = _blogPostService.GetBlogPosts();
-            BlogPostId = _blogPostService.GetBlogPostById(id);
-            BlogPostTitle = _blogPostService.GetBlogPostByTitle(title);
-            BlogPostPage = _blogPostService.GetBlogPostByPage(pageName);
+            BlogPosts = _blogPostService.GetBlogPosts(_httpContextAccessor.HttpContext);
+            BlogPostId = _blogPostService.GetBlogPostById(id, _httpContextAccessor.HttpContext);
+            BlogPostTitle = _blogPostService.GetBlogPostByTitle(title, _httpContextAccessor.HttpContext);
+            BlogPostPage = _blogPostService.GetBlogPostByPage(pageName, _httpContextAccessor.HttpContext);
 
             if (BlogPostPage == null)
             {

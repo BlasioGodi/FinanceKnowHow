@@ -13,32 +13,56 @@ namespace FinanceKnowHow.Services
             _webHostEnvironment = webHostEnvironment;
             _jsonFilePath = Path.Combine(webHostEnvironment.WebRootPath, "data", jsonFileName);
         }
-        public IEnumerable<BlogPost> GetBlogPosts()
+        public IEnumerable<BlogPost> GetBlogPostsNoHttp()
         {
             using (var jsonFileReader = File.OpenText(_jsonFilePath))
             {
-                return JsonSerializer.Deserialize<BlogPost[]>(jsonFileReader.ReadToEnd(),
+                var blogPosts = JsonSerializer.Deserialize<BlogPost[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
                     });
+
+                return blogPosts;
             }
         }
-        public BlogPost GetBlogPostById(int postId)
+        public IEnumerable<BlogPost> GetBlogPosts(HttpContext httpContext)
         {
-            var blogPostId = GetBlogPosts();
+            //To be Refactored. Get the http url
+            var currentPageUrl = $"{httpContext.Request.Scheme}://{httpContext.Request.Host}"; 
+
+            using (var jsonFileReader = File.OpenText(_jsonFilePath))
+            {
+                var blogPosts = JsonSerializer.Deserialize<BlogPost[]>(jsonFileReader.ReadToEnd(),
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                // Set the PageLink property for each BlogPost object to the current page URL
+                foreach (var blogPost in blogPosts)
+                {
+                    blogPost.PageLink = currentPageUrl;
+                }
+
+                return blogPosts;
+            }
+        }
+        public BlogPost GetBlogPostById(int postId, HttpContext httpContext)
+        {
+            var blogPostId = GetBlogPosts(httpContext);
             return blogPostId.FirstOrDefault(post => post.Id == postId);
         }
 
-        public BlogPost GetBlogPostByTitle(string postTitle)
+        public BlogPost GetBlogPostByTitle(string postTitle, HttpContext httpContext)
         {
-            var blogPostTitle = GetBlogPosts();
+            var blogPostTitle = GetBlogPosts(httpContext);
             return blogPostTitle.FirstOrDefault(post => post.Title == postTitle);
         }
 
-        public BlogPost GetBlogPostByPage(string postName)
+        public BlogPost GetBlogPostByPage(string postName, HttpContext httpContext)
         {
-            var blogPostTitle = GetBlogPosts();
+            var blogPostTitle = GetBlogPosts(httpContext);
             return blogPostTitle.FirstOrDefault(post => post.PageName == postName);
         }
     }

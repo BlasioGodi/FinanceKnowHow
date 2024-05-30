@@ -4,7 +4,8 @@
     ViewData["Contact"] = "+254 (714) 585 382";
     ViewData["Contact2"] = "+254 (721) 262 655";
 
-    Model.Economics = new List<string> { "Financial Concepts", "Idea 2", "Idea 3", "Idea 4", "Idea 5" };
+    Model.Finance = new List<string> { "Financial Concepts", "Idea 2", "Idea 3", "Idea 4", "Idea 5" };
+    Model.Economics = new List<string> { "Economics", "Idea 2", "Idea 3", "Idea 4", "Idea 5" };
     Model.Trading = new List<string> { "Forex/Crypto", "Stocks", "Idea 3", "Idea 4", "Idea 5" };
     Model.Investments = new List<string> { "Portfolio Management", "Bonds", "Treasury Bills", "AI Investing" };
     Model.Business = new List<string> { "Entrepreneurship", "Case Studies", "Idea 3", "Idea 4", "Idea 5" };
@@ -129,7 +130,19 @@
                             <a class="nav-link nav-link-active" aria-current="page" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item navbar-collapse-menu">
-                            <a class="nav-link nav-link-active">Economics<span><i class="fa fa-angle-down"></i></span></a>
+                            <a aria-current="page" asp-area="" asp-page="/Finance" class="nav-link nav-link-active">Finance<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                @if (Model.Finance != null)
+                                {
+                                    @foreach (var finance in Model.Finance)
+                                    {
+                                        <li><a aria-current="page" asp-area="" asp-page="" asp-route-title="">@finance</a></li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="nav-item navbar-collapse-menu">
+                            <a aria-current="page" asp-area="" asp-page="/Economics" class="nav-link nav-link-active">Economics<span><i class="fa fa-angle-down"></i></span></a>
                             <ul>
                                 @if (Model.Economics != null)
                                 {
@@ -141,7 +154,7 @@
                             </ul>
                         </li>
                         <li class="nav-item navbar-collapse-menu">
-                            <a class="nav-link nav-link-active">Investments<span><i class="fa fa-angle-down"></i></span></a>
+                            <a aria-current="page" asp-area="" asp-page="/Investments" class="nav-link nav-link-active">Investments<span><i class="fa fa-angle-down"></i></span></a>
                             <ul>
                                 @if (Model.Investments != null)
                                 {
@@ -153,7 +166,10 @@
                             </ul>
                         </li>
                         <li class="nav-item navbar-collapse-menu">
-                            <a class="nav-link nav-link-active">Trading<span><i class="fa fa-angle-down"></i></span></a>
+                            <a aria-current="page" asp-area="" asp-page="/Trading" class="nav-link nav-link-active">
+                                Trading
+                                <span><i class="fa fa-angle-down"></i></span>
+                            </a>
                             <ul>
                                 @if (Model.Trading != null)
                                 {
@@ -165,7 +181,7 @@
                             </ul>
                         </li>
                         <li class="nav-item navbar-collapse-menu">
-                            <a class="nav-link nav-link-active">Business<span><i class="fa fa-angle-down"></i></span></a>
+                            <a aria-current="page" asp-area="" asp-page="/Business" class="nav-link nav-link-active">Business<span><i class="fa fa-angle-down"></i></span></a>
                             <ul>
                                 @if (Model.Business != null)
                                 {
@@ -177,7 +193,7 @@
                             </ul>
                         </li>
                         <li class="nav-item navbar-collapse-menu">
-                            <a class="nav-link nav-link-active">Personal Finance<span><i class="fa fa-angle-down"></i></span></a>
+                            <a aria-current="page" asp-area="" asp-page="/PersonalFinance" class="nav-link nav-link-active">Personal Finance<span><i class="fa fa-angle-down"></i></span></a>
                             <ul>
                                 @if (Model.PersonalFinance != null)
                                 {
@@ -191,14 +207,20 @@
                         <li class="nav-item">
                             <a class="nav-link nav-link-active" aria-current="page" asp-page="/Archive">Archives</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-active" aria-current="page" asp-page="">Contact</a>
-                        </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-primary border-2 btn-outline-dark search-btn" type="submit">Search</button>
-                    </form>
+                    @using (Html.BeginForm("SearchResults", "Search", FormMethod.Get, new { @id = "search-form", @class = "d-flex", @role = "search" }))
+                    {
+                        @Html.TextBoxFor(Model => Model.query, new
+                        {
+                            @type = "text",
+                            @class = "form-control me-2",
+                            @id = "searchBox_1",
+                           @name = "query",
+                            @placeholder = "Search here...",
+                            @required = "required"
+                        })
+                        <button id="sub_button" class="btn btn-primary border-2 btn-outline-dark search-btn" type="submit">Search</button>
+                    }
                 </div>
                 <a class="brand-logo" aria-current="page" asp-area="" asp-page="/Index">
                     <img src="~/lib/logo/FKHD-40x121.png" class="d-inline-block align-text-center mx-2 navbar-img d-lg-none" alt="FinanceKnowHow Logo" />
@@ -212,21 +234,56 @@
         </div>
         <div class="offcanvas-body container d-flex flex-column justify-content-between">
             <nav class="sideMenu-nav">
-                <form class="d-flex pb-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-primary border-2 btn-outline-dark search-btn" type="submit">Search</button>
-                </form>
+                @using (Html.BeginForm("SearchResults", "Search", FormMethod.Get, new { @id = "search-form", @class = "d-flex pb-3", @role = "search" }))
+                {
+                    @Html.TextBoxFor(Model => Model.query, new
+                    {
+                        @type = "text",
+                        @class = "form-control me-2",
+                        @id = "searchBox_1",
+                           @name = "query",
+                        @placeholder = "Search here...",
+                        @required = "required"
+                    })
+                    <button id="sub_button" class="btn btn-primary border-2 btn-outline-dark search-btn" type="submit">Search</button>
+                }
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Index">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-mobile">
-                            Economics <span class="nav-link-mob-button" id="nav-link-btn-1" data-corresponding-angle="navlinkAngle1" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseEconomics" aria-expanded="false" aria-controls="collapseEconomics">
+                            Finance <span class="nav-link-mob-button" id="nav-link-btn-1" data-corresponding-angle="navlinkAngle1" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseFinance" aria-expanded="false" aria-controls="collapseFinance">
                                 <i class="fa fa-angle-down" id="nav-link-mob-angle-1"></i>
                             </span>
                         </a>
+
+                        <div class="collapse" id="collapseFinance">
+                            <ul class="text-center text-light bg-offcanvas-collapse">
+                                @if (Model.Finance != null)
+                                {
+                                    @for (var i = 0; i < Model.Finance.Count; i++)
+                                    {
+                                        var Finance = Model.Finance[i];
+
+                                        <li class="@(i == Model.Finance.Count - 1 ? "" : "border-bottom-collapse") mx-3 my-2">
+                                            <a target="_blank" rel="noopener noreferrer" class="nav-link"
+                                               aria-current="page" asp-area="" asp-page="" asp-route-title="@Finance">@Finance</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mobile">
+                            Economics <span class="nav-link-mob-button" id="nav-link-btn-2" data-corresponding-angle="navlinkAngle2" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseEconomics" aria-expanded="false" aria-controls="collapseEconomics">
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-2"></i>
+                            </span>
+                        </a>
+                        
                         <div class="collapse" id="collapseEconomics">
                             <ul class="text-center text-light bg-offcanvas-collapse">
                                 @if (Model.Economics != null)
@@ -246,9 +303,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-mobile">
-                            Investments <span class="nav-link-mob-button" id="nav-link-btn-2" data-corresponding-angle="navlinkAngle2" data-bs-toggle="collapse"
+                            Investments <span class="nav-link-mob-button" id="nav-link-btn-3" data-corresponding-angle="navlinkAngle3" data-bs-toggle="collapse"
                                               data-bs-target="#collapseInvestments" aria-expanded="false" aria-controls="collapseInvestments">
-                                <i class="fa fa-angle-down" id="nav-link-mob-angle-2"></i>
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-3"></i>
                             </span>
                         </a>
                         <div class="collapse" id="collapseInvestments">
@@ -270,9 +327,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-mobile">
-                            Trading <span class="nav-link-mob-button" id="nav-link-btn-3" data-corresponding-angle="navlinkAngle3" data-bs-toggle="collapse"
+                            Trading <span class="nav-link-mob-button" id="nav-link-btn-4" data-corresponding-angle="navlinkAngle4" data-bs-toggle="collapse"
                                           data-bs-target="#collapseTrading" aria-expanded="false" aria-controls="collapseTrading">
-                                <i class="fa fa-angle-down" id="nav-link-mob-angle-3"></i>
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-4"></i>
                             </span>
                         </a>
                         <div class="collapse" id="collapseTrading">
@@ -294,9 +351,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-mobile">
-                            Business <span class="nav-link-mob-button" id="nav-link-btn-4" data-corresponding-angle="navlinkAngle4" data-bs-toggle="collapse"
+                            Business <span class="nav-link-mob-button" id="nav-link-btn-5" data-corresponding-angle="navlinkAngle5" data-bs-toggle="collapse"
                                            data-bs-target="#collapseBusiness" aria-expanded="false" aria-controls="collapseBusiness">
-                                <i class="fa fa-angle-down" id="nav-link-mob-angle-4"></i>
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-5"></i>
                             </span>
                         </a>
                         <div class="collapse" id="collapseBusiness">
@@ -318,9 +375,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-mobile">
-                            Personal Finance <span class="nav-link-mob-button" id="nav-link-btn-5" data-corresponding-angle="navlinkAngle5" data-bs-toggle="collapse"
+                            Personal Finance <span class="nav-link-mob-button" id="nav-link-btn-6" data-corresponding-angle="navlinkAngle6" data-bs-toggle="collapse"
                                                    data-bs-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal">
-                                <i class="fa fa-angle-down" id="nav-link-mob-angle-5"></i>
+                                <i class="fa fa-angle-down" id="nav-link-mob-angle-6"></i>
                             </span>
                         </a>
                         <div class="collapse" id="collapsePersonal">
@@ -342,9 +399,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Archive">Archives</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Contact">Contact Us</a>
                     </li>
                 </ul>
             </nav>

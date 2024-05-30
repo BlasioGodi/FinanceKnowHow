@@ -4,7 +4,7 @@
     var blogPostService = new FinanceKnowHow.Services.BlogPostService(WebHostEnvironment, "PersonalBlog.json");
 }
 
-@foreach (var recentPosts in blogPostService.GetBlogPosts().Take(3))
+@foreach (var recentPosts in blogPostService.GetBlogPostsNoHttp().Take(3))
 {
     <div class="archive-load" id="archive-load">
         <div class="archive-load-thumbnail">
