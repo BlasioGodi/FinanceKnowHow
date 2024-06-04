@@ -25,7 +25,7 @@ namespace FinanceKnowHow.Controllers
 
         //Search Algorithm
         [HttpGet]
-        public IActionResult SearchResults(string query, int currentPage = 1, int pageSize = 8)
+        public IActionResult SearchResults(string query, int currentPage = 1, int pageSize = 6)
         {
             //Convert the query to Lowercase to make the search case-insensitive
             query = query.ToLower();
