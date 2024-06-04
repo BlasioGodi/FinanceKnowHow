@@ -78,72 +78,8 @@
                 </div>
                 <partial name="_Pagination" model="Model.PaginatedList" />
             </div>
-            <aside id="side-bar" class="col-lg-4 col-md-12 col-xs-12 container">
-                <div class="row mx-1">
-                    <div class="widget recent-posts-widget col-lg-12 col-md-8 col-sm-8">
-                        <header class="widget-head">
-                            <h3>Popular Posts</h3>
-                        </header>
-                        <ol>
-                            @{
-                                int counter = 0;
-                                if (Model.PopularPosts != null)
-                                {
-                                    for (var i = 0; i < 5; i++)
-                                    {
-                                        var post = Model.PopularPosts.ElementAt(i);
-                                        <li>
-                                            <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
-                                            <span class="post-tag">
-                                                <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
-                                                @if (counter % 2 == 0)
-                                                {
-                                                    <strong class="tag hot">@post.Category</strong>
-                                                }
-                                                else
-                                                {
-                                                    <strong class="tag">@post.Category</strong>
-                                                }
-                                            </span>
-                                        </li>
-                                        counter++;
-                                    }
-                                }
-                            }
-                        </ol>
-                    </div>
-                    <div class="col-lg-12 col-md-4 col-sm-4">
-                        <div class="widget promo-widget">
-                            <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
-                        </div>
-                        <div class="widget widget_categories" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                            <header class="widget-head">
-                                <h3>Category</h3>
-                                <p>Browse your favorite categories</p>
-                            </header>
-                            <div class="lists-holder">
-                                <ul>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Lifestyle </a> (23)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Movie </a> (02)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Travel </a> (11)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Sports </a> (05)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Music </a> (01)</li>
-                                </ul>
-                                <ul>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Education </a> (15)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">International </a> (09)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Design </a> (26)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">News </a> (01)</li>
-                                    <li class="cat-item cat-item-1"><a asp-page="/Blog/BlogPost" asp-route-pageName="">Review </a> (14)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="widget promo-widget ">
-                            <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+            <!--Aside Bar-->
+            <partial name="_asideBar" model="Model.PopularPosts" />
         </div>
     </div>
 </section>

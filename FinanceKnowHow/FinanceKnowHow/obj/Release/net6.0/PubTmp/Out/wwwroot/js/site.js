@@ -28,7 +28,8 @@ const mobnavAngle = {
     navlinkAngle2: document.getElementById("nav-link-mob-angle-2"),
     navlinkAngle3: document.getElementById("nav-link-mob-angle-3"),
     navlinkAngle4: document.getElementById("nav-link-mob-angle-4"),
-    navlinkAngle5: document.getElementById("nav-link-mob-angle-5")
+    navlinkAngle5: document.getElementById("nav-link-mob-angle-5"),
+    navlinkAngle6: document.getElementById("nav-link-mob-angle-6")
 }
 
 const mobnavButton = {
@@ -36,7 +37,8 @@ const mobnavButton = {
     mobnavButton2: document.getElementById("nav-link-btn-2"),
     mobnavButton3: document.getElementById("nav-link-btn-3"),
     mobnavButton4: document.getElementById("nav-link-btn-4"),
-    mobnavButton5: document.getElementById("nav-link-btn-5")
+    mobnavButton5: document.getElementById("nav-link-btn-5"),
+    mobnavButton6: document.getElementById("nav-link-btn-6")
 };
 
 const toggleClass = (element) => {

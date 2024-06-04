@@ -1,4 +1,5 @@
-﻿@model List<FinanceKnowHow.Models.BlogPost>
+﻿@using System.Web 
+@model List<FinanceKnowHow.Models.BlogPost>
 @{
     ViewData["Title"] = "Search Results";
 }
@@ -12,20 +13,31 @@
             </div>
             <h2 class="searchresults_title"> Your Search Results</h2>
 
-            <div class="searchresults">
-                @foreach (var blogPost in Model)
-                {
-                    <div class="searchresults_section py-3">
-                        <h3 class="searchresults_heading">@blogPost.Title</h3>
-                        <div class="searchresults_url">
-                            <a href="@Url.Page("/Blog/BlogPost", new { pageName = blogPost.PageName })">
-                                @blogPost.PageLink@System.Web.HttpUtility.UrlDecode(@Url.Page("/Blog/BlogPost", new { pageName = blogPost.PageName }))
-                            </a>
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="alert alert-warning">
+                    @ViewBag.Message
+                </div>
+            }
+            else
+            {
+                <div class="searchresults">
+                    @foreach (var blogPost in Model)
+                    {
+                        <div class="searchresults_section py-3">
+                            <h3 class="searchresults_heading">@blogPost.Title</h3>
+                            <div class="searchresults_url">
+                                <a href="@Url.Page("/Blog/BlogPost", new { pageName = blogPost.PageName })">
+                                    @blogPost.PageLink@HttpUtility.UrlDecode(@Url.Page("/Blog/BlogPost", new { pageName = blogPost.PageName }))
+                                </a>
+                            </div>
+                            <div class="searchresults_description">@blogPost.Summary</div>
                         </div>
-                        <div class="searchresults_description">@blogPost.Summary</div>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
+            }
         </div>
     </div>
 </section>
+
+@*<partial name="_Pagination" model="Model.PaginatedList"/>*@

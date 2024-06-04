@@ -30,6 +30,26 @@
     .archive .archive-category {
         padding: 20.2vmin 0 20.2vmin;
     }
+
+    .slider-nav__trading{
+        bottom: 0;
+    }
+
+    .form_button {
+        width: 40%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .form_button {
+        width: 20%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form_button {
+        width: 20%;
+    }
 }
 
 @media (min-width: 280px) and (max-width: 768px) {
@@ -46,6 +66,7 @@
     .post.single .post-image {
         margin-bottom: -50px;
     }
+
     .trading-box_title {
         font-size: 1.5rem;
     }
@@ -54,7 +75,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1rem;
     }
 
@@ -201,11 +222,6 @@
         margin-right: 20px;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -270,11 +286,6 @@
         margin-right: 20px;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -326,11 +337,6 @@
         min-height: 20vh;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -379,11 +385,6 @@
         min-height: 20vh;
     }
 
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
-    }
-
     .slider-nav__trading .slider-button-prev_trading {
         left: -15%;
     }
@@ -430,11 +431,6 @@
 
     .slider-button-next {
         margin-right: 20px;
-    }
-
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 35%;
     }
 
     .slider-nav__trading .slider-button-prev_trading {
@@ -487,11 +483,6 @@
         .slider-inner p {
             font-size: 1.5rem;
         }
-
-    .slider-nav__trading .slider-button-prev_trading,
-    .slider-nav__trading .slider-button-next_trading {
-        top: 38%;
-    }
 
     .slider-nav__trading .slider-button-prev_trading {
         left: -10%;
@@ -796,7 +787,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1rem;
     }
 
@@ -1019,7 +1010,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1.2rem;
     }
 
@@ -1144,6 +1135,14 @@
         line-height: 50px;
         font-size: 20px;
     }
+
+    .cols-holder .img-holder img, .cols-holder .video-holder img, .cols-holder .carousel img {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        max-width: none;
+        max-height: none;
+    }
 }
 
 /* Screen Device - Nest Hub */
@@ -1204,7 +1203,7 @@
         margin: 0 0 10px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1.2rem;
     }
 
@@ -1241,7 +1240,7 @@
         margin: 0 0 15px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 1.5rem;
         padding: 20px;
     }
@@ -1448,13 +1447,13 @@
         margin: 0 0 5px;
     }
 
-    .trading-box p {
+    .trading-box a {
         font-size: 0.8rem;
     }
 
     .slider-nav__trading .slider-button-prev_trading,
     .slider-nav__trading .slider-button-next_trading {
-        top: 25%;
+        bottom: 25%;
     }
 
     .slider-nav__trading .slider-button-prev_trading {

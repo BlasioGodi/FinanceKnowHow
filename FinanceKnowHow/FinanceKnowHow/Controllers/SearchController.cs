@@ -38,6 +38,11 @@ namespace FinanceKnowHow.Controllers
                              ContainsStem(p.Title, query))
                 .ToList();
 
+            if (!results.Any())
+            {
+                ViewBag.Message = "No search results found.";
+            }
+
             return View("_searchResults", results);
         }
 

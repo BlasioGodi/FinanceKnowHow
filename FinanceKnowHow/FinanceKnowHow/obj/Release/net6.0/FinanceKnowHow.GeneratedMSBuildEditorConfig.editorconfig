@@ -84,6 +84,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hcmNoaXZlTG9hZFRyYWRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_asideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hc2lkZUJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_asideBarMain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9hc2lkZUJhck1haW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Git/Websites/FinanceKnowHow/FinanceKnowHow/FinanceKnowHow/Pages/Shared/_errorPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9lcnJvclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

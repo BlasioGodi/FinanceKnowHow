@@ -619,10 +619,9 @@ body.offcanvas-open {
 
 .slider-nav__trading {
     position: absolute;
-    top: 30%;
     left: -5%;
     right: -5%;
-    bottom: 0;
+    bottom:30%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1647,10 +1646,19 @@ body.offcanvas-open {
     -o-transition: all 0.17s ease-in-out;
 }
 
+.trading-box a{
+    color: white;
+}
+
     .trading-box p:hover {
         color: var(--text-color-gold);
         text-decoration: none;
     }
+
+.trading-box a:hover {
+    color: var(--theme-color-gold);
+    cursor: pointer;
+}
 
 /* Blog Post */
 
@@ -1783,10 +1791,6 @@ body.offcanvas-open {
     padding-top: 1.4rem;
 }
 
-.searchresults_section {
-
-}
-
 .searchresults_title {
     letter-spacing: .05rem;
     text-transform: uppercase;
@@ -1813,6 +1817,9 @@ body.offcanvas-open {
     padding-bottom: 1rem;
 }
 
+.img-wrap{
+    max-height: none;
+}
 /* MAIN STYLING --- END*/
 /* Footer Section */
 .site-footer, .site-footer__top, .site-footer__top-inner,

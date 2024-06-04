@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FinanceKnowHow.Models.BlogPost>
+@{
+    //For two or more models passed to the view, use composite models
+}
+
+<aside id="side-bar" class="col-lg-4 col-md-12 col-xs-12">
+    <div class="row">
+        <div class="col">
+            <div class="widget recent-posts-widget ">
+                <header class="widget-head">
+                    <h3>Popular Posts</h3>
+                </header>
+                <ol>
+                    @{
+                        int counter = 0;
+                        if (Model != null)
+                        {
+                            for (int i = 0; i < 5; i++)
+                            {
+                                var post = Model.ElementAt(i);
+                                <li>
+                                    <h4><a class="widget-link" asp-page="/Blog/BlogPost" asp-route-pageName="@post.PageName">@post.Summary</a></h4>
+                                    <span class="post-tag">
+                                        <time>@post.PublishedDate.ToString("dd") @post.PublishedDate.ToString("MMM") </time>
+                                        @if (counter % 2 == 0)
+                                        {
+                                            <strong class="tag hot">@post.Category</strong>
+                                        }
+                                        else
+                                        {
+                                            <strong class="tag">@post.Category</strong>
+                                        }
+                                    </span>
+                                </li>
+                                counter++;
+                            }
+                        }
+                    }
+                </ol>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="widget promo-widget">
+                <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+            </div>
+            <div class="widget widget_categories">
+                <header class="widget-head">
+                    <h3>Category</h3>
+                    <p>Browse your favorite categories</p>
+                </header>
+                <div class="lists-holder">
+                    <ul>
+                        <li class="cat-item cat-item-1"><a href="#">Lifestyle </a> (23)</li>
+                        <li class="cat-item cat-item-1"><a href="#">Movie </a> (02)</li>
+                        <li class="cat-item cat-item-1"><a href="#">Travel </a> (11)</li>
+                        <li class="cat-item cat-item-1"><a href="#">Sports </a> (05)</li>
+                        <li class="cat-item cat-item-1"><a href="#">Music </a> (01)</li>
+                    </ul>
+                    <ul>
+                        <li class="cat-item cat-item-1"><a href="#">Education </a> (15)</li>
+                        <li class="cat-item cat-item-1"><a href="#">International </a> (09)</li>
+                        <li class="cat-item cat-item-1"><a href="#">Design </a> (26)</li>
+                        <li class="cat-item cat-item-1"><a href="#">News </a> (01)</li>
+                        <li class="cat-item cat-item-1"><a href="#">Review </a> (14)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="widget promo-widget ">
+                <a href="#"><img src="https://placehold.it/350x300?text=Ad" alt="“Place your Advertisement here”"></a>
+            </div>
+        </div>
+    </div>
+</aside>

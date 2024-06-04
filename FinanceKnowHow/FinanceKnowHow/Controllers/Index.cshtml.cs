@@ -20,6 +20,7 @@ namespace FinanceKnowHow.Controllers
         public BlogPostService _personalBlogService;
         public BlogPostService _investmentBlogService;
         public BlogPostService _trendingBlogService;
+        public BlogPostService _popularBlogService;
         public string DateSuffix { get; set; }
         public string Day { get; set; }
         public IEnumerable<BlogPost> BlogPosts { get; private set; }
@@ -30,6 +31,7 @@ namespace FinanceKnowHow.Controllers
         public IEnumerable<BlogPost> PersonalPosts { get; private set; }
         public IEnumerable<BlogPost> InvestmentPosts { get; private set; }
         public IEnumerable<BlogPost> TrendingPosts { get; private set; }
+        public IEnumerable<BlogPost> PopularPosts { get; private set; }
 
         public IndexModel(ILogger<IndexModel> logger, BlogPostService blogPostService, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
@@ -49,6 +51,7 @@ namespace FinanceKnowHow.Controllers
             _personalBlogService = new BlogPostService(_webHostEnvironment, "PersonalBlog.json");
             _investmentBlogService = new BlogPostService(_webHostEnvironment, "InvestmentsBlog.json");
             _trendingBlogService = new BlogPostService(_webHostEnvironment, "TrendingBlog.json");
+            _popularBlogService = new BlogPostService(_webHostEnvironment, "PopularBlog.json");
 
             Theme = "dark"; // Set the theme to light for this index page
             base.GetTheme(Theme);
@@ -61,6 +64,7 @@ namespace FinanceKnowHow.Controllers
             PersonalPosts = _personalBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
             InvestmentPosts = _investmentBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
             TrendingPosts = _trendingBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
+            PopularPosts = _popularBlogService.GetBlogPosts(_httpContextAccessor.HttpContext);
         }
     }
 }
