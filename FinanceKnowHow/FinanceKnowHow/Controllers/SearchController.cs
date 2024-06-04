@@ -1,6 +1,7 @@
 ﻿using Annytab.Stemmer;
 using FinanceKnowHow.Models;
 using FinanceKnowHow.Services;
+using FinanceKnowHow.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceKnowHow.Controllers
@@ -24,10 +25,11 @@ namespace FinanceKnowHow.Controllers
 
         //Search Algorithm
         [HttpGet]
-        public IActionResult SearchResults(string query)
+        public IActionResult SearchResults(string query, int currentPage = 1, int pageSize = 8)
         {
             //Convert the query to Lowercase to make the search case-insensitive
             query = query.ToLower();
+            ViewBag.Query = query;
 
             var results = _blogPostService.GetBlogPosts(_httpContextAccessor.HttpContext)
                 .Where(p => p.PageName.ToLower().Contains(query) ||
@@ -38,12 +40,21 @@ namespace FinanceKnowHow.Controllers
                              ContainsStem(p.Title, query))
                 .ToList();
 
-            if (!results.Any())
+            //Pagination Call for Search Results
+            var count = results.Count();
+            var searchItems = results
+                .Skip((currentPage - 1) * pageSize)
+                .Take(pageSize) 
+                .ToList();
+
+            var paginatedList = new PaginatedList<BlogPost>(searchItems, count, currentPage, pageSize);
+
+            if (!searchItems.Any())
             {
                 ViewBag.Message = "No search results found.";
             }
 
-            return View("_searchResults", results);
+            return View("_searchResults", paginatedList);
         }
 
         //Method to check if a text contains a stem of a word
