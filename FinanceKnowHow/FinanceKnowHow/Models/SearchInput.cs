@@ -5,6 +5,6 @@ namespace FinanceKnowHow.Models
     public class SearchInput
     {
         [Required]
-        public string query { get; set; }
+        public string? query { get; set; }
     }
 }

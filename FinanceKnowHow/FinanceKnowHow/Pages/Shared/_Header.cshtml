@@ -44,7 +44,7 @@
                             <a class="social-list-whatsapp" href=""><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                         <div class="main-header_btn-box">
-                            <a href="#" class="btn btn-primary">
+                            <a aria-current="page" asp-area="" asp-page="/Subscribe" class="btn btn-primary">
                                 <i class="fa fa-envelope"></i>
                                 NewsLetter
                             </a>
@@ -129,6 +129,9 @@
                         <li class="nav-item">
                             <a class="nav-link nav-link-active" aria-current="page" asp-area="" asp-page="/Index">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-active" aria-current="page" asp-area="" asp-page="/Subscribe">Subscribe</a>
+                        </li>
                         <li class="nav-item navbar-collapse-menu">
                             <a aria-current="page" asp-area="" asp-page="/Finance" class="nav-link nav-link-active">Finance<span><i class="fa fa-angle-down"></i></span></a>
                             <ul>
@@ -142,7 +145,9 @@
                             </ul>
                         </li>
                         <li class="nav-item navbar-collapse-menu">
-                            <a aria-current="page" asp-area="" asp-page="/Economics" class="nav-link nav-link-active">Economics<span><i class="fa fa-angle-down"></i></span></a>
+                            <a aria-current="page" asp-area="" asp-page="/Economics" class="nav-link nav-link-active">
+                                Economics<span><i class="fa fa-angle-down"></i></span>
+                            </a>
                             <ul>
                                 @if (Model.Economics != null)
                                 {
@@ -203,9 +208,6 @@
                                     }
                                 }
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-active" aria-current="page" asp-page="/Archive">Archives</a>
                         </li>
                     </ul>
                     @using (Html.BeginForm("SearchResults", "Search", FormMethod.Get, new { @id = "search-form", @class = "d-flex", @role = "search" }))
@@ -397,9 +399,6 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link-mobile" aria-current="page" asp-area="" asp-page="/Archive">Archives</a>
-                    </li>
                 </ul>
             </nav>
             <div class="row">
@@ -408,6 +407,21 @@
                     <p class="text"><span><i class="fa fa-phone contact-icons phone"></i> @ViewData["Contact2"]</span></p>
                     <p class="text"><span><i class="fa fa-whatsapp contact-icons whatsapp"></i> @ViewData["Contact"]</span></p>
                     <p class="text"><span><i class="fa fa-envelope contact-icons email"></i> @ViewData["Email"]</span></p>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="footer-widget__column footer-widget__newsletter">
+                        <h3 class="footer-widget__title text-center">
+                            Subscribe to our Newsletter
+                        </h3>
+                        <div class="footer-widget__newsletter-form">
+                            <div class="footer-widget__newsletter-input-box">
+                                <a aria-page="current"asp-area="" asp-page="/Subscribe" class="footer-widget__newsletter-btn">
+                                    <span class="subscribe">Subscribe</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row align-items-center">

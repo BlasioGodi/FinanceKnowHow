@@ -296,7 +296,6 @@ $card-primary-color: white;
 .btn-primary.search-btn:focus {
     @extend .btn-primary;
     background-color: var(--theme-color-grey);
-    border-color: rgb(var(--theme-color-grey-rgb));  
     color: var(--text-color-white);
     cursor: pointer;
 }

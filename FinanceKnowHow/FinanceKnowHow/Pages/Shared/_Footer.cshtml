@@ -13,7 +13,7 @@
         <div class="container">
             <div class="site-footer__top-inner">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="footer-widget__column footer-widget__about">
                             <div class="footer-widget__details-logo">
                                 <div class="footer-widget__about-logo">
@@ -46,51 +46,45 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-6 col-md-6">
+                    <div class="col-xl-2 col-lg-2 col-md-6">
                         <div class="footer-widget__column footer-widget__company clearfix">
                             <h3 class="footer-widget__title">Company</h3>
                             <ul class="footer-widget__company-list list-unstyled">
-                                <li><a target="_blank" rel="noreferrer" href="#">About us</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Finance 101</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Investments</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Wealth</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Economics</a></li>
+                                <li><a asp-area="" asp-page="/Index">Home</a></li>
+                                <li><a asp-area="" asp-page="/AboutUs">About us</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-6 col-md-6">
+                    <div class="col-xl-2 col-lg-2 col-md-4">
                         <div class="footer-widget__column footer-widget__explore clearfix">
-                            <h3 class="footer-widget__title">Explore</h3>
+                            <h3 class="footer-widget__title title_sub">Explore</h3>
                             <ul class="footer-widget__explore-list list-unstyled">
-                                <li><a target="_blank" rel="noreferrer" href="#">Legal</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Privacy Policy</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Cookie Policy</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Advertise</a></li>
-                                <li><a target="_blank" rel="noreferrer" href="#">Contact us</a></li>
+                                <li><a asp-area="" asp-page="/Finance">Finance</a></li>
+                                <li><a asp-area="" asp-page="/Economics">Economics</a></li>
+                                <li><a asp-area="" asp-page="/Investments">Investments</a></li>
+                                <li><a asp-area="" asp-page="/Trading">Trading</a></li>
+                                <li><a asp-area="" asp-page="/Business">Business</a></li>
+                                <li><a asp-area="" asp-page="/PersonalFinance">Personal Finance</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="footer-widget__column footer-widget__newsletter">
-                            <h3 class="footer-widget__title">
-                                Newsletter
-                            </h3>
-                            <form class="footer-widget__newsletter-form">
-                                <div class="footer-widget__newsletter-input-box">
-                                    <input type="email" placeholder="Email address" name="email" required="">
-                                    <button type="submit" class="footer-widget__newsletter-btn">
-                                        <span class="subscribe">Subscribe</span>
-                                    </button>
-                                </div>
-                            </form>
-                            <div class="footer-widget__newsletter-bottom">
-                                <div class="footer-widget__newsletter-bottom-icon">
-                                    <i class="fa fa-check"></i>
-                                </div>
-                                <div class="footer-widget__newsletter-bottom-text">
-                                    <p>I agree to all terms and policies</p>
-                                </div>
-                            </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4">
+                        <div class="footer-widget__column footer-widget__explore clearfix">
+                            <h3 class="footer-widget__title title_sub">Legal</h3>
+                            <ul class="footer-widget__explore-list list-unstyled">
+                                <li><a asp-area="" asp-page="/Privacy" >Privacy Policy</a></li>
+                                <li><a asp-area="" asp-page="/TermsofUse">Terms of Use</a></li>
+                                <li><a asp-area="" asp-page="/Cookies">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4">
+                        <div class="footer-widget__column footer-widget__explore clearfix">
+                            <h3 class="footer-widget__title title_sub">Support</h3>
+                            <ul class="footer-widget__explore-list list-unstyled">
+                                <li><a asp-area="" asp-page="/Contact">Contact us</a></li>
+                                <li><a asp-area="" asp-page="/SiteMap">SiteMap</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

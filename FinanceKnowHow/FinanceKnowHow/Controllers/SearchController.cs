@@ -38,7 +38,7 @@ namespace FinanceKnowHow.Controllers
                              ContainsStem(p.PageName, query) ||
                              ContainsStem(p.Highlight, query) ||
                              ContainsStem(p.Title, query))
-                .ToList();
+                .ToList();   
 
             //Pagination Call for Search Results
             var count = results.Count();
