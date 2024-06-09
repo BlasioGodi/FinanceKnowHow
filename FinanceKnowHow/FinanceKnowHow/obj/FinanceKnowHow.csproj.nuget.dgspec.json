@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj": {}
+    "D:\\Git\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj": {}
   },
   "projects": {
-    "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj": {
+    "D:\\Git\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj",
+        "projectUniqueName": "D:\\Git\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj",
         "projectName": "FinanceKnowHow",
-        "projectPath": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\Websites\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\obj\\",
+        "projectPath": "D:\\Git\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow.csproj",
+        "packagesPath": "C:\\Users\\muhin\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\FinanceKnowHow\\FinanceKnowHow\\FinanceKnowHow\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muhin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -100,8 +99,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -113,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

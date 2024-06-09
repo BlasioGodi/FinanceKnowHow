@@ -1,4 +1,12 @@
 {
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:12562",
+      "sslPort": 44350
+    }
+  },
   "profiles": {
     "finance-knowhow": {
       "commandName": "Project",
@@ -6,8 +14,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://192.168.100.2:7289;http://192.168.100.2:5222"
+      "applicationUrl": "http://192.168.100.10:7289;http://192.168.100.10:5222",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -15,14 +23,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    }
-  },
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:12562",
-      "sslPort": 44350
     }
   }
 }
