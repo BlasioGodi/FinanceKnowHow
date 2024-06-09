@@ -1,1 +1,1 @@
-# FInanceDemystefied
+# FinanceKnowHow
